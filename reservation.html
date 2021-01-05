@@ -28,6 +28,11 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+
+
+
+
+	
     <div class="py-1 bg-black top">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
@@ -51,14 +56,14 @@
     </div>
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Feliciano</a>
+	      <a class="navbar-brand" href="index.php">Feliciano</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	        	<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+	        	<li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
 	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
 	        	<li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
 	        	<li class="nav-item"><a href="blog.html" class="nav-link">Stories</a></li>
@@ -76,7 +81,7 @@
         <div class="row no-gutters slider-text align-items-end justify-content-center">
           <div class="col-md-9 ftco-animate text-center mb-4">
             <h1 class="mb-2 bread">Book a Table</h1>
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Reservation <i class="ion-ios-arrow-forward"></i></span></p>
+            <p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Reservation <i class="ion-ios-arrow-forward"></i></span></p>
           </div>
         </div>
       </div>
@@ -91,36 +96,36 @@
 		          	<span class="subheading">Book a table</span>
 		            <h2 class="mb-4">Make Reservation</h2>
 		          </div>
-	            <form action="#">
+	            <form action="book.php" method="POST" novalidate="novalidate">
 	              <div class="row">
 	                <div class="col-md-6">
 	                  <div class="form-group">
 	                    <label for="">Name</label>
-	                    <input type="text" class="form-control" placeholder="Your Name">
+	                    <input type="text" class="form-control" placeholder="Your Name" name="fullname">
 	                  </div>
 	                </div>
 	                <div class="col-md-6">
 	                  <div class="form-group">
 	                    <label for="">Email</label>
-	                    <input type="text" class="form-control" placeholder="Your Email">
+	                    <input type="text" class="form-control" placeholder="Your Email" name="email">
 	                  </div>
 	                </div>
 	                <div class="col-md-6">
 	                  <div class="form-group">
 	                    <label for="">Phone</label>
-	                    <input type="text" class="form-control" placeholder="Phone">
+	                    <input type="text" class="form-control" placeholder="Phone" name="phone1">
 	                  </div>
 	                </div>
 	                <div class="col-md-6">
 	                  <div class="form-group">
-	                    <label for="">Phone</label>
-	                    <input type="text" class="form-control" id="book_date" placeholder="Date">
+	                    <label for="">Date</label>
+	                    <input type="text" class="form-control" id="book_date" placeholder="Date" name="date">
 	                  </div>
 	                </div>
 	                <div class="col-md-6">
 	                  <div class="form-group">
 	                    <label for="">Time</label>
-	                    <input type="text" class="form-control" id="book_time" placeholder="Time">
+	                    <input type="text" class="form-control" id="book_time" placeholder="Time" name="time"> 
 	                  </div>
 	                </div>
 	                <div class="col-md-6">
@@ -128,7 +133,7 @@
 	                    <label for="">Person</label>
 	                    <div class="select-wrap one-third">
 	                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-	                      <select name="" id="" class="form-control">
+	                      <select name="person" id="" class="form-control">
 	                        <option value="">Person</option>
 	                        <option value="">1</option>
 	                        <option value="">2</option>
