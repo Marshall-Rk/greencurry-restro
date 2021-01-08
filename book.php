@@ -37,7 +37,7 @@ if (!empty($fullname) || !empty($email) || !empty($phone1) || !empty($date) || !
       $stmt = $conn->prepare($INSERT);
       $stmt->bind_param("ssssii", $fullname, $email, $phone1, $date, $time, $person);
       $stmt->execute();
-      echo "New record inserted sucessfully";
+      echo "<h2>New record inserted sucessfully</h2>";
      } else {
       echo "Someone already register using this email";
      }
