@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Feliciano - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Green-Curry</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -28,7 +28,20 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-
+  <?php
+    session_start();
+    if(isset($_SESSION['mailflag'])){
+echo "<div class=' white-text text-center'>";
+if($_SESSION['mailflag']=='sent'){
+    echo "MAIL WAS SENT SUCCEFULLY";
+}elseif($_SESSION['mailflag']=='unsent'){
+    echo "MAIL WAS NOT SENT SUCCEFULLY";
+    
+}    
+echo "</div>";
+         unset($_SESSION['mailflag']);
+    }
+    ?>
  
 
     <div class="py-1 bg-black top">
