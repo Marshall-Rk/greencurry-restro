@@ -35,11 +35,11 @@ if (!empty($fullname) || !empty($email) || !empty($phone1) || !empty($date) || !
      if ($rnum==0) {
       $stmt->close();
       $stmt = $conn->prepare($INSERT);
-      $stmt->bind_param("ssssii", $fullname, $email, $phone1, $date, $time, $person);
+      $stmt->bind_param("sssssi", $fullname, $email, $phone1, $date, $time, $person);
       $stmt->execute();
-      echo "<h2>New record inserted sucessfully</h2>";
+      echo "<h2>Your Response Has Been Regsitered!!!</h2>";
      } else {
-      echo "Someone already register using this email";
+      echo "<h2>Someone already register using this email</h2>";
      }
      $stmt->close();
      $conn->close();
