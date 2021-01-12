@@ -28,20 +28,7 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-  <?php
-    session_start();
-    if(isset($_SESSION['mailflag'])){
-echo "<div class=' white-text text-center'>";
-if($_SESSION['mailflag']=='sent'){
-    echo "MAIL WAS SENT SUCCEFULLY";
-}elseif($_SESSION['mailflag']=='unsent'){
-    echo "MAIL WAS NOT SENT SUCCEFULLY";
-    
-}    
-echo "</div>";
-         unset($_SESSION['mailflag']);
-    }
-    ?>
+
  
 
     <div class="py-1 bg-black top">
@@ -78,9 +65,9 @@ echo "</div>";
 	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
 	        	<li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
 	        	<li class="nav-item"><a href="blog.html" class="nav-link">Stories</a></li>
-	          <li class="nav-item"><a href="reservation.html" class="nav-link">Contact</a></li>
+	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             <li class="nav-item"><a href="registration.php" class="nav-link">Register</a></li>
-
+            <li class="nav-item"><a href="adminform.php" class="nav-link">ADMIN</a></li>
   <li class="nav-item cta"><a href="reservation.html" class="nav-link">Book a table</a></li>
 	        </ul>
 	      </div>
