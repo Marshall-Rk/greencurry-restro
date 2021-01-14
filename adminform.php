@@ -1,11 +1,31 @@
+<link rel="stylesheet" href="css/style.css">
 <?php
+include('auth_sessionadmin.php');
 include('security.php');
+
 ?>
+
+<a href="index.php" button type="button" style="margin-top:10px; margin-right:10px; border-radius:9px;  " class="btn btn-success float-right">GreenCurry</button></a>
+<a href="logout.php" button type="button" style="margin-top:10px; margin-right:10px; border-radius:9px;  " class="btn btn-success float-right">Logout</button></a>
+</br></br>
+
+<style>
+
+body {
+    background-image: url(images/bg_1.jpg);
+}                      
+</style>
+
+<body>
+<
+</body>
+
+
 <div class="container-fluid">
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h2 class="m-0 font-weight-bold text-primary">Table Registration Data</h2>
+            <h2 class="m-0 font-weight-bold text-black">Table Registration Data</h2>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -16,6 +36,10 @@ include('security.php');
                 <table class="table table-fluid" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <style>
+
+body {
+    background-image: url(images/bg_1.jpg);
+}                      
 table { 
   width: 100%; 
   table-layout: auto;
@@ -31,6 +55,7 @@ th {
   font-weight: bold; 
 }
 td, th { 
+    color: #333;
   padding: 6px; 
   border: 1px solid #ccc; 
   text-align: left; 
@@ -47,6 +72,7 @@ td, th {
                             <th scope="col">date</th>
                             <th scope="col">time</th>
                             <th scope="col">person</th>
+                            <th scope="col">Time_of_feedback</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,7 +90,7 @@ td, th {
                                 <td><?php  echo $row['date']; ?></td>
                                 <td><?php  echo $row['time']; ?></td>
                                 <td><?php  echo $row['person']; ?></td>
-                             
+                                <td><?php  echo $row['Time_of_feedback']; ?></td>
                             </tr>
                         <?php
                             } 
@@ -90,7 +116,7 @@ td, th {
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h2 class="m-0 font-weight-bold text-primary">ContactForm Data</h2>
+            <h2 class="m-0 font-weight-bold text-black">ContactForm Data</h2>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -130,7 +156,7 @@ td, th {
                             <th scope="col">email </th>
                             <th scope="col">subject</th>
                             <th scope="col">message</th>
-                        
+                            <th scope="col">Time_of_feedback</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -146,7 +172,7 @@ td, th {
                                 <td><?php  echo $row['email']; ?></td>
                                 <td><?php  echo $row['subject']; ?></td>
                                 <td><?php  echo $row['message']; ?></td>
-                             
+                                <td><?php  echo $row['Time_of_feedback']; ?></td>
                     
                              
                             </tr>
@@ -165,3 +191,9 @@ td, th {
     </div>
 
 </div>
+
+
+
+
+
+

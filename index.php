@@ -66,9 +66,9 @@
 	        	<li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
 	        	<li class="nav-item"><a href="blog.html" class="nav-link">Stories</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-            <li class="nav-item"><a href="registration.php" class="nav-link">Register</a></li>
-            <li class="nav-item"><a href="adminform.php" class="nav-link">ADMIN</a></li>
-  <li class="nav-item cta"><a href="reservation.html" class="nav-link">Book a table</a></li>
+            
+            <li class="nav-item"><a href="login.php" class="nav-link">ADMIN</a></li>
+            <li class="nav-item cta"><a href="reservation.html" class="nav-link">Book a table</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -502,60 +502,60 @@
 	          	<span class="subheading">Book a table</span>
 	            <h2 class="mb-4">Make Reservation</h2>
 	          </div>
-            <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSeX3BpzCB7jR8X3CGHTkIt7go1GeR34h7YERCZtr5bPFXoKUQ/formResponse" method="POST">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="">Name</label>
-                    <input type="text" class="form-control" placeholder="Your Name" jsname="YPqjbf">
-                  </div>s
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="">Email</label>
-                    <input type="text" class="form-control" placeholder="Your Email" jsname="YPqjbf">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="">Phone</label>
-                    <input type="text" class="form-control" placeholder="Phone" jsname="YPqjbf">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="">Phone</label>
-                    <input type="text" class="form-control" id="book_date" placeholder="Date" jsname="YPqjbf">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="">Time</label>
-                    <input type="text" class="form-control" id="book_time" placeholder="Time" jsname="YPqjbf">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="">Person</label>
-                    <div class="select-wrap one-third">
-                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                      <select name="" id="" class="form-control">
-                        <option value="">Person</option>
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4+</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-12 mt-3">
-                  <div class="form-group text-center">
-                    <input type="submit" value="Make a Reservation" class="btn btn-primary py-3 px-5">
-                  </div>
-                </div>
-              </div>
-            </form>
+            <form action="book.php" method="POST" novalidate="novalidate">
+	              <div class="row">
+	                <div class="col-md-6">
+	                  <div class="form-group">
+	                    <label for="">Name</label>
+	                    <input type="text" class="form-control" required placeholder="Your Name" name="fullname">
+	                  </div>
+	                </div>
+	                <div class="col-md-6">
+	                  <div class="form-group">
+	                    <label for="">Email</label>
+	                    <input type="text" class="form-control" required placeholder="Your Email" name="email">
+	                  </div>
+	                </div>
+	                <div class="col-md-6">
+	                  <div class="form-group">
+	                    <label for="">Phone</label>
+	                    <input type="text" class="form-control" required placeholder="Phone" name="phone1">
+	                  </div>
+	                </div>
+	                <div class="col-md-6">
+	                  <div class="form-group">
+	                    <label for="">Date</label>
+	                    <input type="text" class="form-control" id="book_date" required placeholder="Date" name="date">
+	                  </div>
+	                </div>
+	                <div class="col-md-6">
+	                  <div class="form-group">
+	                    <label for="">Time</label>
+	                    <input type="text" class="form-control"  required placeholder="Time" name="time"> 
+	                  </div>
+	                </div>
+	                <div class="col-md-6">
+	                  <div class="form-group">
+	                    <label for="">Person</label>
+	                    <div class="select-wrap one-third">
+	                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+	                      <select name="person" id="" required class="form-control">
+	                        <option value="1">1</option>
+	                        <option value="2">2</option>
+	                        <option value="3">3</option>
+	                        <option value="4">4</option>
+	                        <option value="5">5+</option>
+	                      </select>
+	                    </div>
+	                  </div>
+	                </div>
+	                <div class="col-md-12 mt-3">
+	                  <div class="form-group">
+	                    <input type="submit" value="Make a Reservation" name="book" class="btn btn-primary py-3 px-5">
+	                  </div>
+	                </div>
+	              </div>
+	            </form>
           </div>
         </div>
 			</div>
@@ -779,7 +779,7 @@
           <div class="col-md-12 text-center">
 
             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Website is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://bit.ly/official-nextgenpixel" target="_blank">Nextgenpixel</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
           </div>
         </div>

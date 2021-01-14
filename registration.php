@@ -8,11 +8,11 @@
 <body>
 <?php
     require('db.php');
-    // When form submitted, insert values into the database.
+  
     if (isset($_REQUEST['username'])) {
-        // removes backslashes
+   
         $username = stripslashes($_REQUEST['username']);
-        //escapes special characters in a string
+       
         $username = mysqli_real_escape_string($con, $username);
         $email    = stripslashes($_REQUEST['email']);
         $email    = mysqli_real_escape_string($con, $email);
@@ -42,6 +42,7 @@
         <input type="password" class="login-input" name="password" placeholder="Password">
         <input type="submit" name="submit" value="Register" class="login-button">
         <p class="link"><a href="login.php">Click to Login</a></p>
+        <p class="link"><a href="index.php">Back to Home</a></p>
     </form>
 <?php
     }
