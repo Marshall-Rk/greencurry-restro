@@ -37,7 +37,7 @@ if (!empty($fullname) || !empty($email) || !empty($phone1) || !empty($date) || !
       $stmt = $conn->prepare($INSERT);
       $stmt->bind_param("sssssi", $fullname, $email, $phone1, $date, $time, $person);
       $stmt->execute();
-      echo "<h2>Your Response Has Been Regsitered!!!</h2>";
+      echo "<h2><p> <font color=green>Your Response Has Been Regsitered!!!</h2></font> </p>";
      } else {
       echo "<h2>Someone already register using this email</h2>";
      }
