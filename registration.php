@@ -4,8 +4,10 @@
     <meta charset="utf-8"/>
     <title>Registration</title>
     <link rel="stylesheet" href="css/style2.css"/>
+
 </head>
 <body>
+
 <?php
     require('db.php');
   
@@ -35,6 +37,12 @@
         }
     } else {
 ?>
+
+
+
+
+
+
     <form class="form" action="" method="post">
         <h1 class="login-title">Registration</h1>
         <input type="text" class="login-input" name="username" placeholder="Username" required />
@@ -44,6 +52,8 @@
         <p class="link"><a href="login.php">Click to Login</a></p>
         <p class="link"><a href="index.php">Back to Home</a></p>
     </form>
+
+    
 <?php
     }
 ?>

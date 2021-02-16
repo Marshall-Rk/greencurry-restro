@@ -48,7 +48,8 @@ if (!empty($name) || !empty($email) || !empty($subject) || !empty($message) ) {
      $conn->close();
     }
 } else {
- echo "All field are required";
+ echo "<h2>All field are required</h2>";
  die();
 }
+
 ?>
