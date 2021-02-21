@@ -16,7 +16,7 @@ include('security.php');
 
 ?>
 <p style="background-color: #333; color:whitesmoke;  text-align: center; ">Hey, <?php echo $_SESSION['username']; ?>!</p>
-<a href="index.php" button type="button" style="margin-top:10px; margin-right:10px; border-radius:9px;  " class="btn btn-success float-right">GreenCurry</button></a>
+<a href="admin-dashboard.php" button type="button" style="margin-top:10px; margin-right:10px; border-radius:9px;  " class="btn btn-success float-right">GreenCurry</button></a>
 <a href="logout.php" button type="button" style="margin-top:10px; margin-right:10px; border-radius:9px;  " class="btn btn-success float-right">Logout</button></a>
 </br></br>
 
@@ -84,6 +84,7 @@ td, th {
                             <th scope="col">time</th>
                             <th scope="col">person</th>
                             <th scope="col">Time_of_feedback</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -168,6 +169,7 @@ td, th {
                             <th scope="col">subject</th>
                             <th scope="col">message</th>
                             <th scope="col">Time_of_feedback</th>
+                        
                         </tr>
                     </thead>
                     <tbody>

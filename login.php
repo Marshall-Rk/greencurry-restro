@@ -24,7 +24,7 @@
         if ($rows == 1) {
             $_SESSION['username'] = $username;
            
-            header("Location: dashboard.php");
+            header("Location: admin-dashboard.php");
         } else {
             echo "<div class='form'>
                   <h3>Incorrect Username/password.</h3><br/>
