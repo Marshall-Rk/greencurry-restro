@@ -8,7 +8,7 @@ include('auth_sessionadmin.php');
 if(isset($_GET['delid']))
 {
 $rid=intval($_GET['delid']);
-$sql=mysqli_query($con,"delete from tblusers where ID=$rid");
+$sql=mysqli_query($con,"delete from restro where ID=$rid");
 echo "<script>alert('Data deleted');</script>"; 
 echo "<script>window.location.href = 'admin-dashboard.php'</script>";     
 } 
@@ -20,6 +20,7 @@ echo "<script>window.location.href = 'admin-dashboard.php'</script>";
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>ADMIN_DASHBOARD</title>
+<link rel="stylesheet" href="css/adminboard.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -32,6 +33,8 @@ body {
     color: #566787;
     background: #f5f5f5;
     font-family: 'Roboto', sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 .table-responsive {
     margin: 30px 0;
@@ -161,14 +164,77 @@ table.table td i {
     margin-top: 10px;
     font-size: 13px;
 }
+.hm-gradient {
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+}
+.navbar .dropdown-menu a:hover {
+    color: #616161 !important;
+}
+.darken-grey-text {
+    color: #2E2E2E;
+}
+
 </style>
 </head>
-<body>
-    
-<a href="index.php" button type="button" style="margin-top:10px; margin-right:10px; border-radius:9px;  " class="btn btn-success float-right">GreenCurry</button></a>
-<a href="logout.php" button type="button" style="margin-top:10px; margin-right:10px; border-radius:9px;  " class="btn btn-success float-right">Logout</button></a>
-</br></br>
+<body class="hm-gradient">
+<main>
+<nav class="mb-4 navbar navbar-expand-lg navbar-light cyan">
 
+
+    
+               
+                <a class="navbar-brand" href="#">
+    <img src="images/logo.png" width="30" height="30" class="d-inline-block align-top" alt=""> |
+    <?php echo $_SESSION['username']; ?>_[OWNER]
+  </a>
+
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                    <ul class="navbar-nav ml-auto">
+                   
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#"><i class="fa fa-envelope"></i> Contact <span class="sr-only">(current)</span></a>
+                        </li>
+
+                         <li class="nav-item active dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-address-card"></i> Forms </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-cyan" aria-labelledby="navbarDropdownMenuLink-4">
+                                <a class="dropdown-item" href="#2">Table_Booking</a>
+                                <a class="dropdown-item" href="#3">Contact_Form</a>
+                            </div>
+                            
+                        </li>
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <?php echo $_SESSION['username']; ?> </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-cyan" aria-labelledby="navbarDropdownMenuLink-4">
+                                <a class="dropdown-item" href="index.php">Home</a>
+                                <a class="dropdown-item" href="logout.php">Log out</a>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <hr />
+</main>
+
+
+
+
+
+<form action="result.php" method="POST">
+<center><h3 id="2">Search Database</h3></center>
+<center><table>
+<tr>
+	<td>Search</td>
+	<td><input type="text" placeholder="Enter any name..." name="fullname" validation size="40"></td>
+	<td><input type="submit" name="submit"></td>
+</tr>
+</table></center>
+</form>
 
 <div class="container-xl">
     <div class="table-responsive">
@@ -177,11 +243,13 @@ table.table td i {
                 <div class="row">
                     <div class="col-sm-5">
                         <h2>Table <b>Booking</b></h2>
+
                     </div>
                        <div class="col-sm-7" align="right">
                         <a href="insert.php" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
                                         
                     </div>
+                   
                 </div>
             </div>
             <table class="table table-striped table-hover">
@@ -221,6 +289,7 @@ while ($row=mysqli_fetch_array($ret)) {
   <a href="read.php?viewid=<?php echo htmlentities ($row['id']);?>" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
                             <a href="edit.php?editid=<?php echo htmlentities ($row['id']);?>" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                             <a href="admin-dashboard.php?delid=<?php echo ($row['id']);?>" class="delete" title="Delete" data-toggle="tooltip" onclick="return confirm('Do you really want to Delete ?');"><i class="material-icons">&#xE872;</i></a>
+                            <a href="mailto:<?php echo $record['email'] ?>" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">mail</i></a>
                         </td>
                     </tr>
                     <?php 
@@ -240,7 +309,16 @@ $cnt=$cnt+1;
 
 
 <!--table2 ----------------------------------------------------------------------------------------------------------->
-
+<form action="result2.php" method="POST">
+<center><h3 id="3">Search Database</h3></center>
+<center><table>
+<tr>
+	<td>Search</td>
+	<td><input type="text" placeholder="Enter any name..." name="name" size="40"></td>
+	<td><input type="submit"  name="submit"></td>
+</tr>
+</table></center>
+</form>
 
 <div class="container-xl">
     <div class="table-responsive">
@@ -288,7 +366,7 @@ while ($row=mysqli_fetch_array($ret)) {
                         <td>
   <a href="read.php?viewid=<?php echo htmlentities ($row['id']);?>" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
 
-                            <a href="edit.php?editid=<?php echo htmlentities ($row['id']);?>" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">mail</i></a>
+                            <a href="mailto:<?php echo $record['email'] ?>" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">mail</i></a>
                           
                         </td>
                     </tr>
