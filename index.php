@@ -62,14 +62,16 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	        	<li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
-	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a href="online-food-ordering/restaurants.php" class="nav-link">Restaurants</a></li>
 	        	<li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
 	        	<li class="nav-item"><a href="blog.html" class="nav-link">Stories</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 			
-			  <li class="nav-item"><a href="registration.php" class="nav-link">Registration</a></li>
-
+			
+			  <li class="nav-item"><a href="online-food-ordering" class="nav-link">Order</a></li>
+			  
             <li class="nav-item"><a href="login.php" class="nav-link">ADMIN</a></li>
+		
             <li class="nav-item cta"><a href="reservation.html" class="nav-link">Book a table</a></li>
 	        </ul>
 	      </div>
@@ -84,8 +86,8 @@
           <div class="row slider-text js-fullheight justify-content-center align-items-center" data-scrollax-parent="true">
 
             <div class="col-md-12 col-sm-12 text-center ftco-animate">
-            	<span class="subheading">Feliciano</span>
-              <h1 class="mb-4">Best Restaurant</h1>
+            	<span class="subheading">Greencurry</span>
+              <h1 class="mb-4">Best Food & Restaurants</h1>
             </div>
 
           </div>
@@ -98,7 +100,7 @@
           <div class="row slider-text js-fullheight justify-content-center align-items-center" data-scrollax-parent="true">
 
             <div class="col-md-12 col-sm-12 text-center ftco-animate">
-            	<span class="subheading">Feliciano</span>
+            	<span class="subheading">Greencurry</span>
               <h1 class="mb-4">Nutritious &amp; Tasty</h1>
             </div>
 
@@ -112,7 +114,7 @@
           <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 
             <div class="col-md-12 col-sm-12 text-center ftco-animate">
-            	<span class="subheading">Feliciano</span>
+            	<span class="subheading">Greencurry</span>
               <h1 class="mb-4">Delicious Specialties</h1>
             </div>
 
@@ -305,11 +307,13 @@
 		                  <h3>Grilled Beef with potatoes</h3>
 		                </div>
 		                <div class="one-forth">
-		                  <span class="price">$29</span>
+		                  <span class="price">₹1000</span>
 		                </div>
 		              </div>
 		              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-		              <p><a href="#" class="btn btn-primary">Order now</a></p>
+
+		              <p><a href="online-food-ordering" class="btn btn-primary">Order now</a></p>
+
 	              </div>
               </div>
             </div>
@@ -324,7 +328,7 @@
 		                  <h3>Grilled Beef with potatoes</h3>
 		                </div>
 		                <div class="one-forth">
-		                  <span class="price">$29</span>
+		                  <span class="price">$₹1000</span>
 		                </div>
 		              </div>
 		              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
@@ -344,7 +348,7 @@
 		                  <h3>Grilled Beef with potatoes</h3>
 		                </div>
 		                <div class="one-forth">
-		                  <span class="price">$29</span>
+		                  <span class="price">₹1000</span>
 		                </div>
 		              </div>
 		              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
@@ -363,7 +367,7 @@
 		                  <h3>Grilled Beef with potatoes</h3>
 		                </div>
 		                <div class="one-forth">
-		                  <span class="price">$29</span>
+		                  <span class="price">₹1000</span>
 		                </div>
 		              </div>
 		              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
@@ -383,7 +387,7 @@
 		                  <h3>Grilled Beef with potatoes</h3>
 		                </div>
 		                <div class="one-forth">
-		                  <span class="price">$29</span>
+		                  <span class="price">₹1000</span>
 		                </div>
 		              </div>
 		              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
@@ -402,7 +406,7 @@
 		                  <h3>Grilled Beef with potatoes</h3>
 		                </div>
 		                <div class="one-forth">
-		                  <span class="price">$29</span>
+		                  <span class="price">₹1000</span>
 		                </div>
 		              </div>
 		              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
@@ -551,6 +555,23 @@
 	                    </div>
 	                  </div>
 	                </div>
+					<div class="col-md-6">
+						<div class="form-group">
+						  <label for="">Restaurant</label>
+						  <div class="select-wrap one-third">
+							<div class="icon"><span class="ion-ios-arrow-down"></span></div>
+							<select name="restaurant" id="" required class="form-control">
+							  <option value="Hari Burger">Hari Burger</option>
+							  <option value="The Great Kabab Factory">The Great Kabab Factory</option>
+							  <option value="Martini">Martini</option>
+							  <option value="Aarkay Vaishno Dhaba">Aarkay Vaishno Dhaba</option>
+							  <option value="hudson">hudson</option>
+							  <option value="kriyana store">kriyana store</option>
+							  <option value="Radhe-Krishna">Radhe-Krishna</option>
+							</select>
+						  </div>
+						</div>
+					  </div>
 	                <div class="col-md-12 mt-3">
 	                  <div class="form-group">
 	                    <input type="submit" value="Make a Reservation" name="book" class="btn btn-primary py-3 px-5">
@@ -768,21 +789,23 @@
             <div class="ftco-footer-widget mb-4">
             	<h2 class="ftco-heading-2">Newsletter</h2>
             	<p>Far far away, behind the word mountains, far from the countries.</p>
-              <form action="#" class="subscribe-form">
+
+              <form action="newsletter.php" method="post" class="subscribe-form">
                 <div class="form-group">
-                  <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address">
-                  <input type="submit" value="Subscribe" class="form-control submit px-3">
+                  <input type="text" class="form-control mb-2 text-center" name="email" placeholder="Enter email address">
+                  <input type="submit" value="Subscribe"  name="submit" class="form-control submit px-3">
                 </div>
               </form>
+
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12 text-center">
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <p>
   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Website is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://bit.ly/official-nextgenpixel" target="_blank">Nextgenpixel</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  </p>
           </div>
         </div>
       </div>

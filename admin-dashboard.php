@@ -186,6 +186,7 @@ table.table td i {
                 <a class="navbar-brand" href="#">
     <img src="images/logo.png" width="30" height="30" class="d-inline-block align-top" alt=""> |
     <?php echo $_SESSION['username']; ?>_[OWNER]
+    <a href="loginformail.php"  class="btn btn-info ">SEND_EMAIL</a>
   </a>
 
 
@@ -196,14 +197,15 @@ table.table td i {
                     <ul class="navbar-nav ml-auto">
                    
                         <li class="nav-item active">
-                            <a class="nav-link" href="#"><i class="fa fa-envelope"></i> Contact <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#"><i class="fa fa-envelope"></i> Send_Email</a>
                         </li>
-
-                         <li class="nav-item active dropdown">
+                   
+                         <li class="nav-item active dropdown"> 
                             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-address-card"></i> Forms </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-cyan" aria-labelledby="navbarDropdownMenuLink-4">
                                 <a class="dropdown-item" href="#2">Table_Booking</a>
                                 <a class="dropdown-item" href="#3">Contact_Form</a>
+                                <a class="dropdown-item" href="#4">Email_subscribers</a>
                             </div>
                             
                         </li>
@@ -231,7 +233,8 @@ table.table td i {
 <tr>
 	<td>Search</td>
 	<td><input type="text" placeholder="Enter any name..." name="fullname" validation size="40"></td>
-	<td><input type="submit" name="submit"></td>
+	<td><input type="submit"  name="submit"></td>
+    
 </tr>
 </table></center>
 </form>
@@ -246,10 +249,21 @@ table.table td i {
 
                     </div>
                        <div class="col-sm-7" align="right">
-                        <a href="insert.php" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
-                                        
+                        <a href="insert.php" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Booking</span></a>
+
+                    </br>  </br>
+
+
                     </div>
-                   
+
+               <div class="col-md-4">
+             <a href="generate_pdf_tablebooking.php" class="btn btn-danger">REPORT</a>
+
+                        
+          
+
+               </div>
+
                 </div>
             </div>
             <table class="table table-striped table-hover">
@@ -262,7 +276,9 @@ table.table td i {
                             <th scope="col">date</th>
                             <th scope="col">time</th>
                             <th scope="col">person</th>
+                            <th scope="col">restaurant</th>
                             <th scope="col">Time_of_feedback</th>
+
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -284,7 +300,9 @@ while ($row=mysqli_fetch_array($ret)) {
                                 <td><?php  echo $row['date']; ?></td>
                                 <td><?php  echo $row['time']; ?></td>
                                 <td><?php  echo $row['person']; ?></td>
+                                <td><?php  echo $row['restaurant']; ?></td>
                                 <td><?php  echo $row['Time_of_feedback']; ?></td>
+                            
                         <td>
   <a href="read.php?viewid=<?php echo htmlentities ($row['id']);?>" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
                             <a href="edit.php?editid=<?php echo htmlentities ($row['id']);?>" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
@@ -309,13 +327,14 @@ $cnt=$cnt+1;
 
 
 <!--table2 ----------------------------------------------------------------------------------------------------------->
+
 <form action="result2.php" method="POST">
 <center><h3 id="3">Search Database</h3></center>
 <center><table>
 <tr>
 	<td>Search</td>
-	<td><input type="text" placeholder="Enter any name..." name="name" size="40"></td>
-	<td><input type="submit"  name="submit"></td>
+	<td><input type="text" placeholder="Enter any name..." name="name" validation size="40"></td>
+	<td><input type="submit" name="submit"></td>
 </tr>
 </table></center>
 </form>
@@ -327,8 +346,9 @@ $cnt=$cnt+1;
                 <div class="row">
                     <div class="col-sm-5">
                         <h2>Contact <b>Form</b></h2>
-                    </div>
-                       <div class="col-sm-7" align="right">
+
+                        <a href="generate_pdf_contactform.php" class="btn btn-info">REPORT</a>
+                   
                         
                                         
                     </div>
@@ -364,7 +384,7 @@ while ($row=mysqli_fetch_array($ret)) {
                                 <td><?php  echo $row['message']; ?></td>
                                 <td><?php  echo $row['Time_of_feedback']; ?></td>
                         <td>
-  <a href="read.php?viewid=<?php echo htmlentities ($row['id']);?>" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+ 
 
                             <a href="mailto:<?php echo $record['email'] ?>" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">mail</i></a>
                           
@@ -385,9 +405,90 @@ $cnt=$cnt+1;
     </div>
 </div>  
 
+<!-- table3------------------------------------------------------ -->
+
+<form action="result3.php" method="POST">
+<center><h3 id="4">Search Database</h3></center>
+<center><table>
+<tr>
+	<td>Search</td>
+	<td><input type="text" placeholder="Enter any name..." name="email" validation size="40"></td>
+	<td><input type="submit" name="submit"></td>
+</tr>
+</table></center>
+</form>
+
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h2>Email <b>Subscribers</b></h2>
+
+                    </div>
+                       <div class="col-sm-7" align="right">
+                     
+
+                    </br>  </br>
 
 
+                    </div>
 
+               <div class="col-md-4">
+             <a href="generate_pdf_emailsub.php" class="btn btn-warning">REPORT</a>
+
+                        
+          
+
+               </div>
+
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                            <th scope="col"> ID </th>
+                            <th scope="col">EMAIL</th>
+      
+
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     <?php
+$ret=mysqli_query($con,"select * from newsletter");
+$cnt=1;
+$row=mysqli_num_rows($ret);
+if($row>0){
+while ($row=mysqli_fetch_array($ret)) {
+
+?>
+<!--Fetch the Records -->
+                    <tr>
+                    <td><?php  echo $row['id']; ?></td>
+                                <td><?php  echo $row['email']; ?></td>
+                    
+                            
+                        <td>
+ 
+                            <a href="mailto:<?php echo $record['email'] ?>" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">mail</i></a>
+                        </td>
+                    </tr>
+                    <?php 
+$cnt=$cnt+1;
+} } else {?>
+<tr>
+    <th style="text-align:center; color:red;" colspan="6">No Record Found</th>
+</tr>
+<?php } ?>                 
+                
+                </tbody>
+            </table>
+       
+        </div>
+    </div>
+</div>
 
 
 

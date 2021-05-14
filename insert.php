@@ -15,7 +15,7 @@ if(isset($_POST['submit']))
 
    
   // Query for data insertion
-     $query=mysqli_query($con, "insert into restro(id,fullname,email,phone1,date,time,person) value('$id','$fullname', '$email', '$phone1', '$date', '$time', '$person' )");
+     $query=mysqli_query($con, "insert into restro(id,fullname,email,phone1,date,time,person) value($fullname', '$email', '$phone1', '$date', '$time', '$person' )");
     if ($query) {
     echo "<script>alert('You have successfully inserted the data');</script>";
     echo "<script type='text/javascript'> document.location ='admin-dashboard.php'; </script>";
@@ -142,10 +142,10 @@ body {
 			</div>        	
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="email" placeholder="Enter your Email" required="true" maxlength="50" >
+            <input type="email" class="form-control" validate=validate name="email" id="email" pattern=".+@gmail.com" size="30" placeholder="Enter your Email" required="true" maxlength="50" >
         </div>
         <div class="form-group">
-        	<input type="text" class="form-control" name="phone1" placeholder="Enter your phone No." required="true">
+        	<input type="tel" id="phone" class="form-control" name="phone1" placeholder="Enter your phone No." required="true">
         </div>
 		<div class="form-group">
         	<input type="text" class="form-control" name="date" placeholder="Enter Date" required="true">

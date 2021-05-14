@@ -56,7 +56,7 @@
     </div>
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.php">Feliciano</a>
+	      <a class="navbar-brand" href="index.php">GREENCURRY</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -68,6 +68,8 @@
 	        	<li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
 	        	<li class="nav-item"><a href="blog.html" class="nav-link">Stories</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+			  <li class="nav-item"><a href="online-food-ordering/restaurants.php" class="nav-link">Restaurants</a></li>
+			  <li class="nav-item"><a href="online-food-ordering" class="nav-link">Order</a></li>
 	          <li class="nav-item cta"><a href="reservation.html" class="nav-link">Book a table</a></li>
 	        </ul>
 	      </div>
@@ -143,6 +145,23 @@
 	                    </div>
 	                  </div>
 	                </div>
+					<div class="col-md-6">
+						<div class="form-group">
+						  <label for="">Restaurant</label>
+						  <div class="select-wrap one-third">
+							<div class="icon"><span class="ion-ios-arrow-down"></span></div>
+							<select name="restaurant" id="" required class="form-control">
+							  <option value="Hari Burger">Hari Burger</option>
+							  <option value="The Great Kabab Factory">The Great Kabab Factory</option>
+							  <option value="Martini">Martini</option>
+							  <option value="Aarkay Vaishno Dhaba">Aarkay Vaishno Dhaba</option>
+							  <option value="hudson">hudson</option>
+							  <option value="kriyana store">kriyana store</option>
+							  <option value="Radhe-Krishna">Radhe-Krishna</option>
+							</select>
+						  </div>
+						</div>
+					  </div>
 	                <div class="col-md-12 mt-3">
 	                  <div class="form-group">
 	                    <input type="submit" value="Make a Reservation" name="book" class="btn btn-primary py-3 px-5">
@@ -213,12 +232,15 @@
             <div class="ftco-footer-widget mb-4">
             	<h2 class="ftco-heading-2">Newsletter</h2>
             	<p>Far far away, behind the word mountains, far from the countries.</p>
-              <form action="#" class="subscribe-form">
-                <div class="form-group">
-                  <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address">
-                  <input type="submit" value="Subscribe" class="form-control submit px-3">
-                </div>
-              </form>
+
+				<form action="newsletter.php" method="post" class="subscribe-form">
+					<div class="form-group">
+					  <input type="text" class="form-control mb-2 text-center" name="email" placeholder="Enter email address">
+					  <input type="submit" value="Subscribe"  name="submit" class="form-control submit px-3">
+					</div>
+				  </form>
+
+
             </div>
           </div>
         </div>
