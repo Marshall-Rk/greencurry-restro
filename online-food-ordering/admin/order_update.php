@@ -3,7 +3,7 @@
 include("../connection/connect.php");
 error_reporting(0);
 session_start();
-if(strlen($_SESSION['user_id'])==0)
+if(strlen($_SESSION['user_id'])==1)
   { 
 header('location:login.php');
 }
@@ -42,7 +42,7 @@ window.print();
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-    <title>Ela - Bootstrap Admin Dashboard Template</title>
+    <title>Greencurry-Admin-Dashboard</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->

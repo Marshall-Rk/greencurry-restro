@@ -72,10 +72,10 @@ if(isset($_POST['submit']))   // if button is submit
       <input type="text" placeholder="Username"  name="username"/>
       <input type="password" placeholder="Password" name="password"/>
       <input type="submit" id="buttn" name="submit" value="login" />
+	  <a href="../index.php">HOME</a>
     </form>
-	<a href="index.php" type="button" class="btn btn-success">HOME</a>
   </div>
-  
+ 
   <div class="cta">Not registered?<a href="registration.php" style="color:#f30;"> Create an account</a></div>
 </div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

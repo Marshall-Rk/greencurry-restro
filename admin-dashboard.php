@@ -178,6 +178,7 @@ table.table td i {
 </head>
 <body class="hm-gradient">
 <main>
+    
 <nav class="mb-4 navbar navbar-expand-lg navbar-light cyan">
 
 
@@ -185,7 +186,7 @@ table.table td i {
                
                 <a class="navbar-brand" href="#">
     <img src="images/logo.png" width="30" height="30" class="d-inline-block align-top" alt=""> |
-    <?php echo $_SESSION['username']; ?>_[OWNER]
+    <?php echo $_SESSION['username']; ?>_[Manager]
     <a href="loginformail.php"  class="btn btn-info ">SEND_EMAIL</a>
   </a>
 

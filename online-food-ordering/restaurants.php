@@ -29,12 +29,12 @@ session_start();
             <nav class="navbar navbar-dark">
                 <div class="container">
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/food-picky-logo.png" alt=""> </a>
+                    <a class="navbar-brand" href="../index.php"> <img class="img-rounded" alt="">GREENCURRY</a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
                             <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span class="sr-only"></span></a> </li>
-                            
+                            <li class="nav-item"> <a class="nav-link active" href="admin">Admin-Login <span class="sr-only"></span></a> </li>
 							<?php
 						if(empty($_SESSION["user_id"]))
 							{
@@ -57,6 +57,7 @@ session_start();
             </nav>
             <!-- /.navbar -->
         </header>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
         <div class="page-wrapper">
             <!-- top Links -->
             <div class="top-links">
@@ -139,7 +140,7 @@ session_start();
 															<div class="entry-dscr">
 																<h5><a href="dishes.php?res_id='.$rows['rs_id'].'" >'.$rows['title'].'</a></h5> <span>'.$rows['address'].' <a href="#">...</a></span>
 																<ul class="list-inline">
-																	<li class="list-inline-item"><i class="fa fa-check"></i> Min $ 10,00</li>
+																	<li class="list-inline-item"><i class="fa fa-check"></i> Min ₹ 500</li>
 																	<li class="list-inline-item"><i class="fa fa-motorcycle"></i> 30 min</li>
 																</ul>
 															</div>

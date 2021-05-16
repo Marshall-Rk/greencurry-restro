@@ -28,8 +28,9 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+  
 
- 
+  
 
     <div class="py-1 bg-black top">
     	<div class="container">
@@ -69,8 +70,8 @@
 			
 			
 			  <li class="nav-item"><a href="online-food-ordering" class="nav-link">Order</a></li>
-			  
-            <li class="nav-item"><a href="login.php" class="nav-link">ADMIN</a></li>
+			  <li class="nav-item"><a href="online-food-ordering/admin/index.php" class="nav-link">ADMIN</a></li>
+            <li class="nav-item"><a href="login.php" class="nav-link">MANAGER</a></li>
 		
             <li class="nav-item cta"><a href="reservation.html" class="nav-link">Book a table</a></li>
 	        </ul>
@@ -78,7 +79,9 @@
 	    </div>
 	  </nav>
     <!-- END nav -->
-    
+    <div>
+		
+	</div>
     <section class="home-slider owl-carousel js-fullheight">
       <div class="slider-item js-fullheight" style="background-image: url(images/bg_1.jpg);">
       	<div class="overlay"></div>
@@ -183,7 +186,7 @@
 					<div class="col-md-5 wrap-about pt-5 pt-md-5 pb-md-3 ftco-animate">
 	          <div class="heading-section mb-4 my-5 my-md-0">
 	          	<span class="subheading">About</span>
-	            <h2 class="mb-4">Feliciano Restaurant</h2>
+	            <h2 class="mb-4">GREENCURRY</h2>
 	          </div>
 	          <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
 						<pc class="time">
@@ -332,7 +335,7 @@
 		                </div>
 		              </div>
 		              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-		              <p><a href="#" class="btn btn-primary">Order now</a></p>
+		              <p><a href="online-food-ordering" class="btn btn-primary">Order now</a></p>
 	              </div>
               </div>
             </div>
@@ -352,7 +355,7 @@
 		                </div>
 		              </div>
 		              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-		              <p><a href="#" class="btn btn-primary">Order now</a></p>
+		              <p><a href="online-food-ordering" class="btn btn-primary">Order now</a></p>
 	              </div>
               </div>
             </div>
@@ -371,7 +374,7 @@
 		                </div>
 		              </div>
 		              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-		              <p><a href="#" class="btn btn-primary">Order now</a></p>
+		              <p><a href="online-food-ordering" class="btn btn-primary">Order now</a></p>
 	              </div>
               </div>
             </div>
@@ -391,7 +394,7 @@
 		                </div>
 		              </div>
 		              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-		              <p><a href="#" class="btn btn-primary">Order now</a></p>
+		              <p><a href="online-food-ordering" class="btn btn-primary">Order now</a></p>
 	              </div>
               </div>
             </div>
@@ -410,7 +413,7 @@
 		                </div>
 		              </div>
 		              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-		              <p><a href="#" class="btn btn-primary">Order now</a></p>
+		              <p><a href="online-food-ordering" class="btn btn-primary">Order now</a></p>
 	              </div>
               </div>
             </div>
@@ -508,36 +511,36 @@
 	          	<span class="subheading">Book a table</span>
 	            <h2 class="mb-4">Make Reservation</h2>
 	          </div>
-            <form action="book.php" method="POST" novalidate="novalidate">
+            <form action="book.php" method="POST">
 	              <div class="row">
 	                <div class="col-md-6">
 	                  <div class="form-group">
 	                    <label for="">Name</label>
-	                    <input type="text" class="form-control" required placeholder="Your Name" name="fullname">
+	                    <input type="text" class="form-control" required placeholder="Your Name" name="fullname"required>
 	                  </div>
 	                </div>
 	                <div class="col-md-6">
 	                  <div class="form-group">
 	                    <label for="">Email</label>
-	                    <input type="text" class="form-control" required placeholder="Your Email" name="email">
+	                    <input type="email" class="form-control" required placeholder="Your Email" name="email" pattern=".+@gmail.com" size="50" required>
 	                  </div>
 	                </div>
 	                <div class="col-md-6">
 	                  <div class="form-group">
 	                    <label for="">Phone</label>
-	                    <input type="text" class="form-control" required placeholder="Phone" name="phone1">
+	                    <input type="text" class="form-control" required placeholder="Phone" name="phone1"required>
 	                  </div>
 	                </div>
 	                <div class="col-md-6">
 	                  <div class="form-group">
 	                    <label for="">Date</label>
-	                    <input type="text" class="form-control" id="book_date" required placeholder="Date" name="date">
+	                    <input type="text" class="form-control" id="book_date" required placeholder="Date" name="date"required>
 	                  </div>
 	                </div>
 	                <div class="col-md-6">
 	                  <div class="form-group">
 	                    <label for="">Time</label>
-	                    <input type="text" class="form-control"  required placeholder="Time" name="time"> 
+	                    <input type="text" class="form-control"  required placeholder="00:00am/pm to 00:00am/pm" name="time"required> 
 	                  </div>
 	                </div>
 	                <div class="col-md-6">
@@ -741,7 +744,7 @@
         <div class="row mb-5">
           <div class="col-md-6 col-lg-3">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Feliciano</h2>
+              <h2 class="ftco-heading-2">GREENCURRY</h2>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>

@@ -91,7 +91,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   overflow-x: hidden;
-  color: #67757c;
+  color: #cbaa82;
 }
 html {
   position: relative;
@@ -129,7 +129,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #455a64;
+  color: #ad9423;
   font-weight: 400;
 }
 h1 {
@@ -292,7 +292,7 @@ h6 {
   color: #00897b;
 }
 .text-dark {
-  color: #67757c;
+  color: #cbaa82;
 }
 .text-themecolor {
   color: #1976d2;
@@ -1182,7 +1182,7 @@ h6.h1 {
 .header ul.dropdown-user li a {
   padding: 9px 15px;
   display: block;
-  color: #67757c;
+  color: #cbaa82;
 }
 .header ul.dropdown-user li a:hover {
   background: #f2f4f8;
@@ -1317,7 +1317,7 @@ h6.h1 {
 }
 .mega-dropdown .nav-accordion .card-header h5 a {
   text-decoration: none;
-  color: #67757c;
+  color: #cbaa82;
 }
 ul.list-style-none {
   margin: 0;
@@ -1327,7 +1327,7 @@ ul.list-style-none li {
   list-style: none;
 }
 ul.list-style-none li a {
-  color: #67757c;
+  color: #cbaa82;
   padding: 8px 0;
   display: block;
   text-decoration: none;
@@ -1337,7 +1337,7 @@ ul.list-style-none li a:hover {
 }
 .dropdown-item {
   padding: 8px 1rem;
-  color: #67757c;
+  color: #cbaa82;
 }
 .custom-select {
   background: url("../../assets/images/custom-select.png") right 0.75rem center no-repeat;
@@ -1417,7 +1417,7 @@ textarea {
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: #67757c;
+  color: #cbaa82;
   white-space: nowrap;
 }
 .mailbox .message-center a .mail-contnet .time {
@@ -1427,7 +1427,7 @@ textarea {
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: #67757c;
+  color: #cbaa82;
   white-space: nowrap;
 }
 @media (min-width: 768px) {
@@ -2031,7 +2031,7 @@ textarea {
 .footer {
   background: #ffffff none repeat scroll 0 0;
   border-top: 1px solid rgba(120, 130, 140, 0.13);
-  color: #67757c;
+  color: #cbaa82;
   left: 0;
   padding: 17px 15px;
   position: absolute;
@@ -2194,7 +2194,7 @@ textarea {
   float: right;
 }
 .card-actions a {
-  color: #67757c;
+  color: #cbaa82;
   cursor: pointer;
   font-size: 13px;
   opacity: 0.7;
@@ -2336,7 +2336,7 @@ textarea {
 }
 .customtab2 li a.nav-link {
   border: 0 none;
-  color: #67757c;
+  color: #cbaa82;
   margin-right: 3px;
 }
 .customtab2 li a.nav-link.active {
@@ -2559,7 +2559,7 @@ table.dataTable thead .sorting::after {
 .dataTables_wrapper .dataTables_paginate .paginate_button {
   border: 1px solid #ddd;
   box-sizing: border-box;
-  color: #67757c;
+  color: #cbaa82;
   cursor: pointer;
   display: inline-block;
   min-width: 1.5em;
@@ -2579,7 +2579,7 @@ table.dataTable thead .sorting::after {
   background: transparent none repeat scroll 0 0;
   border: 1px solid #ddd;
   box-shadow: none;
-  color: #67757c;
+  color: #cbaa82;
   cursor: default;
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
@@ -2588,14 +2588,14 @@ table.dataTable thead .sorting::after {
   color: white;
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button:active {
-  background-color: #67757c;
+  background-color: #cbaa82;
   outline: medium none;
 }
 .dataTables_wrapper .dataTables_paginate .ellipsis {
   padding: 0 1em;
 }
 .tablesaw-bar .btn-group label {
-  color: #67757c !important;
+  color: #cbaa82 !important;
 }
 .dt-bootstrap {
   display: block;
@@ -2696,7 +2696,7 @@ table.dataTable thead .sorting::after {
   margin-bottom: 0;
 }
 .btn-group label.btn-secondary {
-  color: #67757c !important;
+  color: #cbaa82 !important;
 }
 .btn-lg {
   padding: 0.75rem 1.5rem;
@@ -2778,7 +2778,7 @@ table.dataTable thead .sorting::after {
   -o-transition: 0.2s ease-in;
   transition: 0.2s ease-in;
   background-color: #ffffff;
-  color: #67757c;
+  color: #cbaa82;
   border-color: #b1b8bb;
 }
 .btn-secondary:hover {
@@ -2800,7 +2800,7 @@ table.dataTable thead .sorting::after {
   -o-transition: 0.2s ease-in;
   transition: 0.2s ease-in;
   background-color: #ffffff;
-  color: #67757c;
+  color: #cbaa82;
   border-color: #b1b8bb;
 }
 .btn-secondary.disabled:hover {

@@ -135,10 +135,8 @@ if(isset($_POST['submit1'] ))
     <input type="password" placeholder="password" name="password"/>
     <input type="submit"  name="submit" value="login" />
     <p class="message">Not registered? <a href="#">Create an account</a></p>
-</br>
-
   </form>
-  <a href="../index.php" type="button" class="btn btn-success">HOME</a>
+  
 </div>
 
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

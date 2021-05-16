@@ -100,7 +100,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-    <title>Ela - Bootstrap Admin Dashboard Template</title>
+    <title>Greencurry-Admin-Dashboard</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -433,7 +433,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">price </label>
-                                                    <input type="text" name="price" value="<?php echo $roww['price'];?>"  class="form-control" placeholder="$">
+                                                    <input type="text" name="price" value="<?php echo $roww['price'];?>"  class="form-control" placeholder="₹">
                                                    </div>
                                             </div>
                                             <!--/span-->
