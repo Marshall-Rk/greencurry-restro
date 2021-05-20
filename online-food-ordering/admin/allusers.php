@@ -158,7 +158,7 @@ session_start();
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Dashboard</h3> </div>
+                <h3 class="text-warning">Dashboard - Welcome </h3> <?php echo $_SESSION['username']; ?></div>
                
             </div>
             <!-- End Bread crumb -->
