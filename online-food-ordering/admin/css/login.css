@@ -123,7 +123,7 @@
 /* END Form */
 /* Demo Purposes */
 body {
-  background: #ccc;
+  background-image: url(images/bg_1.jpg);
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

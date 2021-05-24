@@ -32,8 +32,8 @@ session_start();
                     <a class="navbar-brand" href="../index.php"> <img class="img-rounded" alt="">GREENCURRY</a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
-                            <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
-                            <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span class="sr-only"></span></a> </li>
+                        <li class="nav-item"> <a class="nav-link active" href="../index.php">Home <span class="sr-only"></span></a> </li>
+                            <li class="nav-item"> <a class="nav-link active" href="index.php">Order <span class="sr-only">(current)</span></a> </li>                           
                             <li class="nav-item"> <a class="nav-link active" href="admin">Admin-Login <span class="sr-only"></span></a> </li>
 							<?php
 						if(empty($_SESSION["user_id"]))

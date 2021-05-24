@@ -1315,7 +1315,7 @@ App section
 .app-section:after {
     content: "";
     background: url(../images/city-2.png) center bottom;
-    background-color: #f30;
+    background-color: #cbaa82;
     display: block;
     position: absolute;
     top: 100px;
