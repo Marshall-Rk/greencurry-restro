@@ -10,12 +10,13 @@ if(isset($_POST['submit']))
     $phone1=$_POST['phone1'];
     $date=$_POST['date'];
 	$time=$_POST['time'];
+	$restaurant=$_POST['restaurant'];
     $person=$_POST['person'];
     
 
    
   // Query for data insertion
-     $query=mysqli_query($con, "insert into restro(id,fullname,email,phone1,date,time,person) value($fullname', '$email', '$phone1', '$date', '$time', '$person' )");
+     $query=mysqli_query($con, "insert into restro(id,fullname,email,phone1,date,restaurant,time,person) value($fullname', '$email', '$phone1', '$date','$restaurant', '$time', '$person' )");
     if ($query) {
     echo "<script>alert('You have successfully inserted the data');</script>";
     echo "<script type='text/javascript'> document.location ='admin-dashboard.php'; </script>";
@@ -154,7 +155,10 @@ body {
         	<input type="text" class="form-control" name="time" placeholder="Enter Time" required="true">
         </div>
 		<div class="form-group">
-        	<input type="text" class="form-control" name="person" placeholder="Enter No of person" required="true">
+        	<input type="text" class="form-control" name="restaurant" placeholder="Enter restaurant" required="true">
+        </div>
+		<div class="form-group">
+        	<input type="text" class="form-control" name="person" placeholder="Enter No of person" >
         </div>
 		      
       

@@ -32,7 +32,9 @@ session_start();
                     <a class="navbar-brand" href="../index.php"> <img class="img-rounded" alt="">GREENCURRY</a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
+                        <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span class="sr-only"></span></a> </li>
                         <li class="nav-item"> <a class="nav-link active" href="../index.php">Home <span class="sr-only"></span></a> </li>
+                     
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Order <span class="sr-only">(current)</span></a> </li>                           
                             <li class="nav-item"> <a class="nav-link active" href="admin">Admin-Login <span class="sr-only"></span></a> </li>
 							<?php
@@ -67,6 +69,7 @@ session_start();
                         <li class="col-xs-12 col-sm-4 link-item active"><span>1</span><a href="restaurants.php">Choose Restaurant</a></li>
                         <li class="col-xs-12 col-sm-4 link-item"><span>2</span><a href="#">Pick Your favorite food</a></li>
                         <li class="col-xs-12 col-sm-4 link-item"><span>3</span><a href="#">Order and Pay online</a></li>
+                        <!-- <li class="col-xs-12 col-sm-4 link-item"><span>4</span><a href="restaurants.php">Go-Back</a></li> -->
                     </ul>
                 </div>
             </div>
@@ -125,53 +128,79 @@ session_start();
                             <!-- end:Widget -->
                         </div>
                         <div class="col-xs-12 col-sm-7 col-md-7 col-lg-9">
+                        <a class="btn btn-success mb-1" href="restaurants.php">Search-Restaurants</a>
                             <div class="bg-dark restaurant-entry">
                                 <div class="row">
-                                    
-                                <div class="container-fluid mt-2 ml-2 mr-2 mb-2">
-                                <form action="resultrest.php" method="POST">
-                                <input  class=" btn-block" type="text" placeholder="Enter any Restaurant Name..." name="title" validation size="40">
-	<input class="btn btn-success btn-block" type="submit"  name="submit">
-
-                                     <form action="resultrestdihses.php" method="POST">
-                                    <input  class=" btn-block" type="text" placeholder="Enter any Dish Name..." name="title2" validation size="40">
-                                        <input class="btn btn-info btn-block" type="submit"  name="submit">
-                                        </form>
-                                        </form>
-                                        </div>
+        
     
-                                                <?php $ress= mysqli_query($db,"select * from restaurant");
-                                                                while($rows=mysqli_fetch_array($ress))
-                                                                {
-                                                                            
-						
-													 echo' <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
-															<div class="entry-logo">
-																<a class="img-fluid" href="dishes.php?res_id='.$rows['rs_id'].'" > <img src="admin/Res_img/'.$rows['image'].'" alt="Food logo"></a>
-															</div>
-															<!-- end:Logo -->
-															<div class="entry-dscr">
-																<h5><a href="dishes.php?res_id='.$rows['rs_id'].'" >'.$rows['title'].'</a></h5> <span>'.$rows['address'].' <a href="#">...</a></span>
-																<ul class="list-inline">
-																	<li class="list-inline-item"><i class="fa fa-check"></i> Min ₹ 500</li>
-																	<li class="list-inline-item"><i class="fa fa-motorcycle"></i> 30 min</li>
-																</ul>
-															</div>
-															<!-- end:Entry description -->
-														</div>
-														
-														 <div class="col-sm-12 col-md-12 col-lg-4 text-xs-center">
-																<div class="right-content bg-white">
-																	<div class="right-review">
-																		<div class="rating-block"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-																		<p> 245 Reviews</p> <a href="dishes.php?res_id='.$rows['rs_id'].'" class="btn theme-btn-dash">View Menu</a> </div>
-																</div>
-																<!-- end:right info -->
-															</div>';
-										  }
-						
-						
-						?>
+                                <?php
+$conn = mysqli_connect("localhost", "root", "","online_rest");
+
+if($_REQUEST['submit']){
+$title = $_POST['title'];
+
+
+
+if(empty($title)){
+	$make = '<h4>You must type a word to search!</h4>';
+}else{
+	$make = '<h4>No match found!</h4>';
+	$sele = "SELECT * FROM `restaurant` WHERE title LIKE '%$title%'";
+	$result = mysqli_query($conn,$sele);
+	
+	if($row = mysqli_num_rows($result) > 0){
+		while($row = mysqli_fetch_assoc($result)){
+		
+		// 	echo '<br> Title					: '.$row['title'];
+
+		// 	echo '<div class="entry-logo">
+		// 	<a class="img-fluid" href="dishes.php?res_id='.$row['rs_id'].'" > <img src="admin/Res_img/'.$row['image'].' " alt="Food logo" height="200px" width="200px"></a>
+		// </div>';
+	
+		
+			echo' <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
+			<div class="entry-logo">
+				<a class="img-fluid" href="dishes.php?res_id='.$row['rs_id'].'" > <img src="admin/Res_img/'.$row['image'].'" alt="Food logo" height="120px" width="120px"></a>
+			</div>
+			<!-- end:Logo -->
+			<div class="entry-dscr">
+				<h5><a href="dishes.php?res_id='.$row['rs_id'].'" >'.$row['title'].'</a></h5> <span>'.$row['address'].' <a href="#">...</a></span>
+				<ul class="list-inline">
+					<li class="list-inline-item"><i class="fa fa-check"></i> Min ₹ 500</li>
+					<li class="list-inline-item"><i class="fa fa-motorcycle"></i> 30 min</li>
+				</ul>
+			</div>
+			<!-- end:Entry description -->
+		</div>
+		
+		 <div class="col-sm-12 col-md-12 col-lg-4 text-xs-center">
+				<div class="right-content bg-white">
+					<div class="right-review">
+						<div class="rating-block"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
+						<p> 245 Reviews</p> <a href="dishes.php?res_id='.$row['rs_id'].'" class="btn theme-btn-dash">View Menu</a> </div>
+				</div>
+				<!-- end:right info -->
+			</div>';
+
+
+
+
+
+
+	}
+
+}else{
+echo'<h2> Search Result</h2>';
+
+print ($make);
+}
+mysqli_free_result($result);
+mysqli_close($conn);
+}
+}
+
+?>    
+
                                     
                                 </div>
                                 <!--end:row -->

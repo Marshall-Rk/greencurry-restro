@@ -60,7 +60,7 @@ session_start();
                      
                        
                     </ul>
-                    <!-- User profile and search -->
+                    <!-- User profile and search -->    
                     <ul class="navbar-nav my-lg-0">
 
                         <!-- Search -->

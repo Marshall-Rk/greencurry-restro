@@ -240,7 +240,7 @@ table.table td i {
 </table></center>
 </form>
 
-<div class="container-xl">
+<div class="container-fluid">
     <div class="table-responsive">
         <div class="table-wrapper">
             <div class="table-title">
@@ -260,9 +260,6 @@ table.table td i {
                <div class="col-md-4">
              <a href="generate_pdf_tablebooking.php" class="btn btn-danger">REPORT</a>
 
-                        
-          
-
                </div>
 
                 </div>
@@ -279,8 +276,7 @@ table.table td i {
                             <th scope="col">person</th>
                             <th scope="col">restaurant</th>
                             <th scope="col">Time_of_feedback</th>
-
-                        <th>Action</th>
+                            <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -302,12 +298,15 @@ while ($row=mysqli_fetch_array($ret)) {
                                 <td><?php  echo $row['time']; ?></td>
                                 <td><?php  echo $row['person']; ?></td>
                                 <td><?php  echo $row['restaurant']; ?></td>
-                                <td><?php  echo $row['Time_of_feedback']; ?></td>
-                            
-                        <td>
+                                <td><?php  echo $row['Time_of_feedback']; ?></td>   
+
+                                <td>
   <a href="read.php?viewid=<?php echo htmlentities ($row['id']);?>" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+
                             <a href="edit.php?editid=<?php echo htmlentities ($row['id']);?>" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+
                             <a href="admin-dashboard.php?delid=<?php echo ($row['id']);?>" class="delete" title="Delete" data-toggle="tooltip" onclick="return confirm('Do you really want to Delete ?');"><i class="material-icons">&#xE872;</i></a>
+
                             <a href="mailto:<?php echo $record['email'] ?>" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">mail</i></a>
                         </td>
                     </tr>
@@ -340,7 +339,7 @@ $cnt=$cnt+1;
 </table></center>
 </form>
 
-<div class="container-xl">
+<div class="container-fluid">
     <div class="table-responsive">
         <div class="table-wrapper">
             <div class="table-title">
@@ -419,7 +418,7 @@ $cnt=$cnt+1;
 </table></center>
 </form>
 
-<div class="container-xl">
+<div class="container-fluid">
     <div class="table-responsive">
         <div class="table-wrapper">
             <div class="table-title">
