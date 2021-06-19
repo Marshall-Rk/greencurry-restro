@@ -75,7 +75,7 @@ session_start();
             </div>
             <!-- end:Top links -->
             <!-- start: Inner page hero -->
-            <div class="inner-page-hero bg-image" data-image-src="images/img/res.jpeg">
+            <div class="inner-page-hero bg-image" data-image-src="images/img/wow.jpeg">
                 <div class="container"> </div>
                 <!-- end:Container -->
             </div>
@@ -104,22 +104,22 @@ session_start();
                                 </div>
                                 <div class="widget-body">
                                     <ul class="tags">
-                                        <li> <a href="foodsearc.php?ces_id='.$rows['c_id'].'"   class="btn btn-warning ml-1 mr-1 mt-1">
+                                        <li> <a href="foodsearc.php?ces_id='.$rows['c_id'].'"   class="btn theme-btn ml-1 mr-1 mt-1">
                                     Pizza
                                     </a> </li>
-                                        <li> <a href="#"  class="btn btn-warning ml-1 mr-1 mt-1">
+                                        <li> <a href="#"  class="btn theme-btn ml-1 mr-1 mt-1">
                                     Sendwich
                                     </a> </li>
-                                        <li> <a href="#"  class="btn btn-warning ml-1 mr-1 mt-1">
+                                        <li> <a href="#"  class="btn theme-btn ml-1 mr-1 mt-1">
                                     Sendwich
                                     </a> </li>
-                                        <li> <a href="#"  class="btn btn-warning ml-1 mr-1 mt-1">
+                                        <li> <a href="#"  class="btn theme-btn ml-1 mr-1 mt-1">
                                     Fish 
                                     </a> </li>
-                                        <li> <a href="#"  class="btn btn-warning ml-1 mr-1 mt-1">
+                                        <li> <a href="#"  class="btn theme-btn ml-1 mr-1 mt-1">
                                     Desert
                                     </a> </li>
-                                        <li> <a href="#"  class="btn btn-warning ml-1 mr-1 mt-1">
+                                        <li> <a href="#"  class="btn theme-btn ml-1 mr-1 mt-1">
                                     Salad
                                     </a> </li>
                                     </ul>
@@ -128,7 +128,9 @@ session_start();
                             <!-- end:Widget -->
                         </div>
                         <div class="col-xs-12 col-sm-7 col-md-7 col-lg-9">
-                        <a class="btn btn-success mb-1" href="restaurants.php">Search-Restaurants</a>
+                        <a class="btn theme-btn mb-1" href="restaurants.php">Search-Restaurants</a>
+                        <a class="btn theme-btn mb-1" href="restaurants.php">Search-Food</a>
+                        <a class="btn theme-btn mb-1" href="index.php">Home</a>
                             <div class="bg-dark restaurant-entry">
                                 <div class="row">
         
@@ -136,16 +138,16 @@ session_start();
                                 <?php
 $conn = mysqli_connect("localhost", "root", "","online_rest");
 
-if($_REQUEST['submit2']){
-$title2 = $_POST['title'];
+if($_REQUEST['save']){
+$title = $_POST['title'];
 
 
 
-if(empty($title2)){
+if(empty($title)){
 	$make = '<h4>You must type a word to search!</h4>';
 }else{
 	$make = '<h4>No match found!</h4>';
-	$sele = "SELECT * FROM `restaurant` WHERE title LIKE '%$title2%'";
+	$sele = "SELECT * FROM `dishes` WHERE title LIKE '%$title%'";
 	$result = mysqli_query($conn,$sele);
 	
 	if($row = mysqli_num_rows($result) > 0){
@@ -160,11 +162,11 @@ if(empty($title2)){
 		
 			echo' <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
 			<div class="entry-logo">
-				<a class="img-fluid" href="dishes.php?res_id='.$row['rs_id'].'" > <img src="admin/Res_img/'.$row['image'].'" alt="Food logo" height="120px" width="120px"></a>
+				<a class="img-fluid" href="dishes.php?res_id='.$row['rs_id'].'" > <img src="admin/Res_img/dishes/'.$row['img'].'" alt="Food logo" height="120px" width="120px"></a>
 			</div>
 			<!-- end:Logo -->
 			<div class="entry-dscr">
-				<h5><a href="dishes.php?res_id='.$row['rs_id'].'" >'.$row['title'].'</a></h5> <span>'.$row['address'].' <a href="#">...</a></span>
+				<h5><a href="dishes.php?res_id='.$row['rs_id'].'" >'.$row['title'].'</a></h5> <span>'.$row['slogan'].' <a href="#">...</a></span>
 				<ul class="list-inline">
 					<li class="list-inline-item"><i class="fa fa-check"></i> Min ₹ 500</li>
 					<li class="list-inline-item"><i class="fa fa-motorcycle"></i> 30 min</li>
@@ -177,7 +179,7 @@ if(empty($title2)){
 				<div class="right-content bg-white">
 					<div class="right-review">
 						<div class="rating-block"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-						<p> 245 Reviews</p> <a href="dishes.php?res_id='.$row['rs_id'].'" class="btn theme-btn-dash">View Menu</a> </div>
+						<p> 245 Reviews</p> <a href="dishes.php?res_id='.$row['rs_id'].'" class="btn theme-btn">View Menu</a> </div>
 				</div>
 				<!-- end:right info -->
 			</div>';

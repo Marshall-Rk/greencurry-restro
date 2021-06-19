@@ -72,7 +72,7 @@ session_start();
             </div>
             <!-- end:Top links -->
             <!-- start: Inner page hero -->
-            <div class="inner-page-hero bg-image" data-image-src="images/img/res.jpeg">
+            <div class="inner-page-hero bg-image" data-image-src="images/img/wow.jpeg">
                 <div class="container"> </div>
                 <!-- end:Container -->
             </div>
@@ -88,11 +88,11 @@ session_start();
             <section class="restaurants-page">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-3">
+                        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-12">
                           
                           
-                            <div class="widget clearfix">
-                                <!-- /widget heading -->
+                            <!-- <div class="widget clearfix">
+                            
                                 <div class="widget-heading">
                                     <h3 class="widget-title text-dark">
                                  Popular tags
@@ -101,77 +101,132 @@ session_start();
                                 </div>
                                 <div class="widget-body">
                                     <ul class="tags">
-                                        <li> <a href="foodsearc.php?ces_id='.$rows['c_id'].'"   class="btn btn-warning ml-1 mr-1 mt-1">
+                                        <li> <a href="foodsearc.php?ces_id='.$rows['c_id'].'"   class="btn theme-btn ml-1 mr-1 mt-1">
                                     Pizza
                                     </a> </li>
-                                        <li> <a href="#"  class="btn btn-warning ml-1 mr-1 mt-1">
+                                        <li> <a href="#"  class="btn theme-btn ml-1 mr-1 mt-1">
+                                    Sandwich
+                                    </a> </li>
+                                        <li> <a href="#"  class="btn theme-btn ml-1 mr-1 mt-1">
                                     Sendwich
                                     </a> </li>
-                                        <li> <a href="#"  class="btn btn-warning ml-1 mr-1 mt-1">
-                                    Sendwich
-                                    </a> </li>
-                                        <li> <a href="#"  class="btn btn-warning ml-1 mr-1 mt-1">
+                                        <li> <a href="#"  class="btn theme-btn ml-1 mr-1 mt-1">
                                     Fish 
                                     </a> </li>
-                                        <li> <a href="#"  class="btn btn-warning ml-1 mr-1 mt-1">
+                                        <li> <a href="#"  class="btn theme-btn ml-1 mr-1 mt-1">
                                     Desert
                                     </a> </li>
-                                        <li> <a href="#"  class="btn btn-warning ml-1 mr-1 mt-1">
+                                        <li> <a href="#"  class="btn theme-btn ml-1 mr-1 mt-1">
                                     Salad
                                     </a> </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- end:Widget -->
                         </div>
-                        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-9">
-                            <div class="bg-dark restaurant-entry">
+                        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-12">
+                            <div class="restaurant-entry">
                                 <div class="row">
                                     
-                                <div class="container-fluid mt-2 ml-2 mr-2 mb-2">
-                                <form action="resultrest.php" method="POST">
-                                <input  class=" btn-block" type="text" placeholder="Enter any Restaurant Name..." name="title" validation size="40">
-	<input class="btn btn-success btn-block" type="submit"  name="submit">
+                                <div class="container-fluid mt-2 ml-2 ">
 
-                                     <form action="resultrestdihses.php" method="POST">
-                                    <input  class=" btn-block" type="text" placeholder="Enter any Dish Name..." name="title2" validation size="40">
-                                        <input class="btn btn-info btn-block" type="submit"  name="submit">
+                                <form class="form-inline"  action="resultrest.php" method="POST">
+                                <input style=" border: 1px solid orange; border-radius:9px;" class="form-control form-control " type="text" placeholder="Enter any Restaurant Name..." name="title" validation size="40">
+                                
+	<input class="btn  theme-btn btn float-right" style="border-radius:9px; " type="submit"  name="submit">
+    </form> 
+   
+                                     <form class="form-inline mt-1" action="resultrestdihses.php" method="POST">
+                                    <input style=" border: 1px solid orange;border-radius:9px" class="form-control form-control " type="text" placeholder="Enter any Dish Name..." name="title" validation size="40">
+                                        <input class="btn theme-btn btn" style="border-radius:9px" type="submit"  name="save">
                                         </form>
-                                        </form>
+                                        
+                                      
+                                      
                                         </div>
     
-                                                <?php $ress= mysqli_query($db,"select * from restaurant");
-                                                                while($rows=mysqli_fetch_array($ress))
-                                                                {
-                                                                            
+<section class="featured-restaurants py-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="title-block pull-left">
+                            <h4 class="btn theme-btn" >Featured restaurants</h4> </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <!-- restaurants filter nav starts -->
+                        <div class="restaurants-filter pull-right">
+                            <nav class="primary pull-left">
+                                <ul>
+                                    <li><a href="#" class="selected" data-filter="*">all</a> </li>
+									<?php 
+									// display categories here
+									$res= mysqli_query($db,"select * from res_category");
+									      while($row=mysqli_fetch_array($res))
+										  {
+											echo '<li><a href="#" data-filter=".'.$row['c_name'].'"> '.$row['c_name'].'</a> </li>';
+										  }
+									?>
+                                   
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- restaurants filter nav ends -->
+                    </div>
+                </div>
+                <!-- restaurants listing starts -->
+                <div class="row">
+                    <div class="restaurant-listing">
+                        
 						
-													 echo' <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
-															<div class="entry-logo">
-																<a class="img-fluid" href="dishes.php?res_id='.$rows['rs_id'].'" > <img src="admin/Res_img/'.$rows['image'].'" alt="Food logo"></a>
-															</div>
-															<!-- end:Logo -->
-															<div class="entry-dscr">
-																<h5><a href="dishes.php?res_id='.$rows['rs_id'].'" >'.$rows['title'].'</a></h5> <span>'.$rows['address'].' <a href="#">...</a></span>
-																<ul class="list-inline">
-																	<li class="list-inline-item"><i class="fa fa-check"></i> Min ₹ 500</li>
-																	<li class="list-inline-item"><i class="fa fa-motorcycle"></i> 30 min</li>
-																</ul>
-															</div>
-															<!-- end:Entry description -->
-														</div>
-														
-														 <div class="col-sm-12 col-md-12 col-lg-4 text-xs-center">
-																<div class="right-content bg-white">
-																	<div class="right-review">
-																		<div class="rating-block"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-																		<p> 245 Reviews</p> <a href="dishes.php?res_id='.$rows['rs_id'].'" class="btn theme-btn-dash">View Menu</a> </div>
+						<?php  //fetching records from table and filter using html data-filter tag
+						$ress= mysqli_query($db,"select * from restaurant");  
+									      while($rows=mysqli_fetch_array($ress))
+										  {
+													// fetch records from res_category table according to catgory ID
+													$query= mysqli_query($db,"select * from res_category where c_id='".$rows['c_id']."' ");
+													 $rowss=mysqli_fetch_array($query);
+						
+													 echo ' <div class="col-xs-12 col-sm-12 col-md-6 single-restaurant all '.$rowss['c_name'].'">
+														<div class="restaurant-wrap">
+															<div class="row">
+																<div class="col-xs-12 col-sm-3 col-md-12 col-lg-3 text-xs-center">
+																	<a class="restaurant-logo" href="dishes.php?res_id='.$rows['rs_id'].'" > <img src="admin/Res_img/'.$rows['image'].'" alt="Restaurant logo"> </a>
 																</div>
-																<!-- end:right info -->
-															</div>';
+																<!--end:col -->
+																<div class="col-xs-12 col-sm-9 col-md-12 col-lg-9">
+																	<h5><a href="dishes.php?res_id='.$rows['rs_id'].'" >'.$rows['title'].'</a></h5> <span>'.$rows['address'].'</span>
+																	<div class="bottom-part">
+																		<div class="cost"><i class="fa fa-check"></i> Min ₹ 10,00</div>
+																		<div class="mins"><i class="fa fa-motorcycle"></i> 30 min</div>
+																		<div class="ratings"> <span>
+																				<i class="fa fa-star"></i>
+																				<i class="fa fa-star"></i>
+																				<i class="fa fa-star"></i>
+																				<i class="fa fa-star"></i>
+																				<i class="fa fa-star-o"></i>
+																			</span> (122) </div>
+																	</div>
+																</div>
+																<!-- end:col -->
+															</div>
+															<!-- end:row -->
+														</div>
+														<!--end:Restaurant wrap -->
+													</div>';
 										  }
 						
 						
 						?>
+						
+							
+						
+					
+                    </div>
+                </div>
+                <!-- restaurants listing ends -->
+               
+            </div>
+        </section>
                                     
                                 </div>
                                 <!--end:row -->

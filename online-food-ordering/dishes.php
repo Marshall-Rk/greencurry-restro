@@ -81,7 +81,7 @@ include_once 'product-action.php'; //including controller
 									     $rows=mysqli_fetch_array($ress);
 										  
 										  ?>
-            <section class="inner-page-hero bg-image" data-image-src="images/img/dish.jpeg">
+            <section class="inner-page-hero bg-image" data-image-src="images/img/bg_3.jpg">
                 <div class="profile">
                     <div class="container">
                         <div class="row">
@@ -92,7 +92,7 @@ include_once 'product-action.php'; //including controller
                             </div>
 							
                             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 profile-desc">
-                                <div class="pull-left right-text white-txt">
+                                <div class="pull-left right-text black-txt">
                                     <h6><a href="#"><?php echo $rows['title']; ?></a></h6>
                                     <p><?php echo $rows['address']; ?></p>
                                     <ul class="nav nav-inline">
@@ -190,7 +190,9 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                     </div>
 
                     <div class="col-xs-12 col-sm-8 col-md-8 col-lg-6">
-                      
+                    <a class="btn theme-btn mb-1" href="restaurants.php">Search-Restaurants</a>
+                        <a class="btn theme-btn mb-1" href="restaurants.php">Search-Food</a>
+                        <a class="btn theme-btn mb-1" href="index.php">Home</a>
                         <!-- end:Widget menu -->
                         <div class="menu-widget" id="2">
                             <div class="widget-heading">

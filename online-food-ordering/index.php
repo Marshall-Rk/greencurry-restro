@@ -75,14 +75,16 @@ session_start(); //start temp session until logout/browser closed
                     <h1>Order Delivery & Take-Out </h1>
                     <h5 class="font-white space-xs">Find restaurants, specials, and coupons for free</h5>
                     <div class="banner-form">
-                        <form class="form-inline">
-                            <div class="form-group">
-                                <label class="sr-only" for="exampleInputAmount">I would like to eat....</label>
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" id="exampleInputAmount" placeholder="I would like to eat...."> </div>
-                            </div>
-                            <button onclick="location.href='restaurants.php'" type="button" class="btn theme-btn btn-lg">Search food</button>
-                        </form>
+
+                       
+
+
+
+<form class="form-inline" action="resultrestdihses.php" method="POST">
+      <input class="form-control form-control-lg" type="text" placeholder="Enter any Dish Name..." name="title" valsize="40">
+          <input class="btn theme-btn btn-lg" type="submit"  name="save">
+          </form>
+
                     </div>
                     <div class="steps">
                         <div class="step-item step1">
@@ -144,7 +146,7 @@ session_start(); //start temp session until logout/browser closed
 															<div class="content">
 																<h5><a href="dishes.php?res_id='.$r['rs_id'].'">'.$r['title'].'</a></h5>
 																<div class="product-name">'.$r['slogan'].'</div>
-																<div class="price-btn-block"> <span class="price">₹'.$r['price'].'</span> <a href="dishes.php?res_id='.$r['rs_id'].'" class="btn theme-btn-dash pull-right">Order Now</a> </div>
+																<div class="price-btn-block"> <span class="price">₹'.$r['price'].'</span> <a href="dishes.php?res_id='.$r['rs_id'].'" class="btn theme-btn  pull-right">Order Now</a> </div>
 															</div>
 															
 														</div>

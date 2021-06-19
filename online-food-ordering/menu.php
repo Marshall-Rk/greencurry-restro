@@ -32,9 +32,8 @@ session_start();
                     <a class="navbar-brand" href="../index.php"> <img class="img-rounded" alt="">GREENCURRY</a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
-                        <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span class="sr-only"></span></a> </li>
                         <li class="nav-item"> <a class="nav-link active" href="../index.php">Home <span class="sr-only"></span></a> </li>
-                     
+                        <li class="nav-item"> <a class="nav-link active" href="../reservation.html">Book-Table <span class="sr-only"></span></a> </li>
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Order <span class="sr-only">(current)</span></a> </li>                           
                             <li class="nav-item"> <a class="nav-link active" href="admin">Admin-Login <span class="sr-only"></span></a> </li>
 							<?php
@@ -62,40 +61,16 @@ session_start();
         <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
         <div class="page-wrapper">
             <!-- top Links -->
-            <div class="top-links">
-                <div class="container">
-                    <ul class="row links">
-                       
-                        <li class="col-xs-12 col-sm-4 link-item active"><span>1</span><a href="restaurants.php">Choose Restaurant</a></li>
-                        <li class="col-xs-12 col-sm-4 link-item"><span>2</span><a href="#">Pick Your favorite food</a></li>
-                        <li class="col-xs-12 col-sm-4 link-item"><span>3</span><a href="#">Order and Pay online</a></li>
-                        <!-- <li class="col-xs-12 col-sm-4 link-item"><span>4</span><a href="restaurants.php">Go-Back</a></li> -->
-                    </ul>
-                </div>
-            </div>
-            <!-- end:Top links -->
-            <!-- start: Inner page hero -->
-            <div class="inner-page-hero bg-image" data-image-src="images/img/wow.jpeg">
-                <div class="container"> </div>
-                <!-- end:Container -->
-            </div>
-            <div class="result-show">
-                <div class="container">
-                    <div class="row">
-                       
-                       
-                    </div>
-                </div>
-            </div>
+            
             <!-- //results show -->
             <section class="restaurants-page">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-3">
+                        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-12">
                           
                           
-                            <div class="widget clearfix">
-                                <!-- /widget heading -->
+                            <!-- <div class="widget clearfix">
+                            
                                 <div class="widget-heading">
                                     <h3 class="widget-title text-dark">
                                  Popular tags
@@ -108,7 +83,7 @@ session_start();
                                     Pizza
                                     </a> </li>
                                         <li> <a href="#"  class="btn theme-btn ml-1 mr-1 mt-1">
-                                    Sendwich
+                                    Sandwich
                                     </a> </li>
                                         <li> <a href="#"  class="btn theme-btn ml-1 mr-1 mt-1">
                                     Sendwich
@@ -124,85 +99,101 @@ session_start();
                                     </a> </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- end:Widget -->
                         </div>
-                        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-9">
-                        <a class="btn theme-btn mb-1" href="restaurants.php">Search-Restaurants</a>
-                        <a class="btn theme-btn mb-1" href="restaurants.php">Search-Food</a>
-                        <a class="btn theme-btn mb-1" href="index.php">Home</a>
-                            <div class="bg-dark restaurant-entry">
+                        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-12">
+                            <div class="restaurant-entry">
                                 <div class="row">
-        
+                                    
+                                <div class="container-fluid mt-2 ml-2 ">
+                                        
+                                      
+                                      
+                                        </div>
     
-                                <?php
-$conn = mysqli_connect("localhost", "root", "","online_rest");
-
-if($_REQUEST['submit']){
-$title = $_POST['title'];
-
-
-
-if(empty($title)){
-	$make = '<h4>You must type a word to search!</h4>';
-}else{
-	$make = '<h4>No match found!</h4>';
-	$sele = "SELECT * FROM `restaurant` WHERE title LIKE '%$title%'";
-	$result = mysqli_query($conn,$sele);
-	
-	if($row = mysqli_num_rows($result) > 0){
-		while($row = mysqli_fetch_assoc($result)){
-		
-		// 	echo '<br> Title					: '.$row['title'];
-
-		// 	echo '<div class="entry-logo">
-		// 	<a class="img-fluid" href="dishes.php?res_id='.$row['rs_id'].'" > <img src="admin/Res_img/'.$row['image'].' " alt="Food logo" height="200px" width="200px"></a>
-		// </div>';
-	
-		
-			echo' <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
-			<div class="entry-logo">
-				<a class="img-fluid" href="dishes.php?res_id='.$row['rs_id'].'" > <img src="admin/Res_img/'.$row['image'].'" alt="Food logo" height="120px" width="120px"></a>
-			</div>
-			<!-- end:Logo -->
-			<div class="entry-dscr">
-				<h5><a href="dishes.php?res_id='.$row['rs_id'].'" >'.$row['title'].'</a></h5> <span>'.$row['address'].' <a href="#">...</a></span>
-				<ul class="list-inline">
-					<li class="list-inline-item"><i class="fa fa-check"></i> Min ₹ 500</li>
-					<li class="list-inline-item"><i class="fa fa-motorcycle"></i> 30 min</li>
-				</ul>
-			</div>
-			<!-- end:Entry description -->
-		</div>
-		
-		 <div class="col-sm-12 col-md-12 col-lg-4 text-xs-center">
-				<div class="right-content bg-white">
-					<div class="right-review">
-						<div class="rating-block"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-						<p> 245 Reviews</p> <a href="dishes.php?res_id='.$row['rs_id'].'" class="btn theme-btn">View Menu</a> </div>
-				</div>
-				<!-- end:right info -->
-			</div>';
-
-
-
-
-
-
-	}
-
-}else{
-echo'<h2> Search Result</h2>';
-
-print ($make);
-}
-mysqli_free_result($result);
-mysqli_close($conn);
-}
-}
-
-?>    
-
+<section class="featured-restaurants py-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="title-block pull-left">
+                            <h4 class="btn theme-btn" >Featured restaurants</h4> </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <!-- restaurants filter nav starts -->
+                        <div class="restaurants-filter pull-right">
+                            <nav class="primary pull-left">
+                                <ul>
+                                    <li><a href="#" class="selected" data-filter="*">all</a> </li>
+									<?php 
+									// display categories here
+									$res= mysqli_query($db,"select * from res_category");
+									      while($row=mysqli_fetch_array($res))
+										  {
+											echo '<li><a href="#" data-filter=".'.$row['c_name'].'"> '.$row['c_name'].'</a> </li>';
+										  }
+									?>
+                                   
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- restaurants filter nav ends -->
+                    </div>
+                </div>
+                <!-- restaurants listing starts -->
+                <div class="row">
+                    <div class="restaurant-listing">
+                        
+						
+						<?php  //fetching records from table and filter using html data-filter tag
+						$ress= mysqli_query($db,"select * from restaurant");  
+									      while($rows=mysqli_fetch_array($ress))
+										  {
+													// fetch records from res_category table according to catgory ID
+													$query= mysqli_query($db,"select * from res_category where c_id='".$rows['c_id']."' ");
+													 $rowss=mysqli_fetch_array($query);
+						
+													 echo ' <div class="col-xs-12 col-sm-12 col-md-6 single-restaurant all '.$rowss['c_name'].'">
+														<div class="restaurant-wrap">
+															<div class="row">
+																<div class="col-xs-12 col-sm-3 col-md-12 col-lg-3 text-xs-center">
+																	<a class="restaurant-logo" href="dishes.php?res_id='.$rows['rs_id'].'" > <img src="admin/Res_img/'.$rows['image'].'" alt="Restaurant logo"> </a>
+																</div>
+																<!--end:col -->
+																<div class="col-xs-12 col-sm-9 col-md-12 col-lg-9">
+																	<h5><a href="dishes.php?res_id='.$rows['rs_id'].'" >'.$rows['title'].'</a></h5> <span>'.$rows['address'].'</span>
+																	<div class="bottom-part">
+																		<div class="cost"><i class="fa fa-check"></i> Min ₹ 10,00</div>
+																		<div class="mins"><i class="fa fa-motorcycle"></i> 30 min</div>
+																		<div class="ratings"> <span>
+																				<i class="fa fa-star"></i>
+																				<i class="fa fa-star"></i>
+																				<i class="fa fa-star"></i>
+																				<i class="fa fa-star"></i>
+																				<i class="fa fa-star-o"></i>
+																			</span> (122) </div>
+																	</div>
+																</div>
+																<!-- end:col -->
+															</div>
+															<!-- end:row -->
+														</div>
+														<!--end:Restaurant wrap -->
+													</div>';
+										  }
+						
+						
+						?>
+						
+							
+						
+					
+                    </div>
+                </div>
+                <!-- restaurants listing ends -->
+               
+            </div>
+        </section>
                                     
                                 </div>
                                 <!--end:row -->
