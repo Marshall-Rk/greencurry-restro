@@ -15,13 +15,28 @@ session_start();
     <link rel="icon" href="#">
     <title>Starter Template for Bootstrap</title>
     <!-- Bootstrap core CSS -->
+    
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet"> </head>
+    <style>
+.parallax {
+  /* The image used */
+  background-image: url("images/menu-bg2.jpg");
 
+  /* Set a specific height */
+  min-height: 200px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
 <body>
            <!--header starts-->
         <header id="header" class="header-scroll top-header headrom">
@@ -61,6 +76,9 @@ session_start();
         <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
         <div class="page-wrapper">
             <!-- top Links -->
+            <div class="parallax">
+                
+            </div>
             
             <!-- //results show -->
             <section class="restaurants-page">

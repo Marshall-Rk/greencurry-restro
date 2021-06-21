@@ -91,8 +91,8 @@ include_once 'product-action.php'; //including controller
                                 </div>
                             </div>
 							
-                            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 profile-desc">
-                                <div class="pull-left right-text black-txt">
+                            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 profile-desc" >
+                                <div class="pull-left right-text black-txt px-2 py-2" style="background:#CA451D; opacity:0.9;border-radius:19px;">
                                     <h6><a href="#"><?php echo $rows['title']; ?></a></h6>
                                     <p><?php echo $rows['address']; ?></p>
                                     <ul class="nav nav-inline">
@@ -189,7 +189,7 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                             </div>
                     </div>
 
-                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-6">
+                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                     <a class="btn theme-btn mb-1" href="restaurants.php">Search-Restaurants</a>
                         <a class="btn theme-btn mb-1" href="restaurants.php">Search-Food</a>
                         <a class="btn theme-btn mb-1" href="index.php">Home</a>
@@ -235,7 +235,7 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                                         <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info"> 
 										<span class="price pull-left" >₹<?php echo $product['price']; ?></span>
 										  <input class="b-r-0" type="text" name="quantity"  style="margin-left:30px;" value="1" size="2" />
-										  <input type="submit" class="btn theme-btn" style="margin-left:40px;" value="Add to cart" />
+										  <input type="submit" class="btn btn-success mt-1" style="margin-left:40px;" value="Add to cart" />
 										</div>
 										</form>
                                     </div>
@@ -258,53 +258,7 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                        
                     </div>
                     <!-- end:Bar -->
-                    <div class="col-xs-12 col-md-12 col-lg-3">
-                        <div class="sidebar-wrap">
-                           <div class="widget clearfix">
-                            <!-- /widget heading -->
-                            <div class="widget-heading">
-                                <h3 class="widget-title text-dark">
-                              Popular tags
-                           </h3>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="widget-body">
-                                <ul class="tags">
-                                    <li> <a href="#" class="tag">
-                                 Coupons
-                                 </a> </li>
-                                    <li> <a href="#" class="tag">
-                                 Discounts
-                                 </a> </li>
-                                    <li> <a href="#" class="tag">
-                                 Deals
-                                 </a> </li>
-                                    <li> <a href="#" class="tag">
-                                 Amazon 
-                                 </a> </li>
-                                    <li> <a href="#" class="tag">
-                                 Ebay
-                                 </a> </li>
-                                    <li> <a href="#" class="tag">
-                                 Fashion
-                                 </a> </li>
-                                    <li> <a href="#" class="tag">
-                                 Shoes
-                                 </a> </li>
-                                    <li> <a href="#" class="tag">
-                                 Kids
-                                 </a> </li>
-                                    <li> <a href="#" class="tag">
-                                 Travel
-                                 </a> </li>
-                                    <li> <a href="#" class="tag">
-                                 Hosting
-                                 </a> </li>
-                                </ul>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
+                    
                     <!-- end:Right Sidebar -->
                 </div>
                 <!-- end:row -->

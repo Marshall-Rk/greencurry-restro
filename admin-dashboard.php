@@ -28,6 +28,7 @@ echo "<script>window.location.href = 'admin-dashboard.php'</script>";
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
 <style>
 body {
     color: #566787;
@@ -234,7 +235,7 @@ table.table td i {
 <tr>
 	<td>Search</td>
 	<td><input type="text" placeholder="Enter any name..." name="fullname" validation size="40"></td>
-	<td><input type="submit"  name="submit"></td>
+	<td><input type="submit" class="btn btn-success btn-sm" name="submit"></td>
     
 </tr>
 </table></center>
@@ -246,11 +247,12 @@ table.table td i {
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-5">
+                        
                         <h2>Table <b>Booking</b></h2>
-
+                        
                     </div>
                        <div class="col-sm-7" align="right">
-                        <a href="insert.php" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Booking</span></a>
+                        <!-- <a href="insert.php" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Booking</span></a> -->
 
                     </br>  </br>
 
@@ -259,7 +261,25 @@ table.table td i {
 
                <div class="col-md-4">
              <a href="generate_pdf_tablebooking.php" class="btn btn-danger">REPORT</a>
+             <button type="button"  class="btn btn-info btn-rounded ">  
+                       <?php
+   $connection_mysql = mysqli_connect("localhost","root","","testingpixel");
+   
+   if (mysqli_connect_errno($connection_mysql)){
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+   }
+   $sql = "SELECT email FROM restro ";
+   
+   if ($result = mysqli_query($connection_mysql,$sql)){
+      $rowcount = mysqli_num_rows($result);
+      
+      printf("Total Bookings - %d \n",$rowcount);
+      mysqli_free_result($result);
+   }
+   mysqli_close($connection_mysql);
+?></h2>
 
+</button>
                </div>
 
                 </div>
@@ -347,8 +367,26 @@ $cnt=$cnt+1;
                     <div class="col-sm-5">
                         <h2>Contact <b>Form</b></h2>
 
-                        <a href="generate_pdf_contactform.php" class="btn btn-info">REPORT</a>
-                   
+                        <a href="generate_pdf_contactform.php" class="btn btn-danger">REPORT</a>
+                        <button type="button"  class="btn btn-info btn-rounded ">  
+                       <?php
+   $connection_mysql = mysqli_connect("localhost","root","","testingpixel");
+   
+   if (mysqli_connect_errno($connection_mysql)){
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+   }
+   $sql = "SELECT email FROM contactform ";
+   
+   if ($result = mysqli_query($connection_mysql,$sql)){
+      $rowcount = mysqli_num_rows($result);
+      
+      printf("Total Feedback - %d \n",$rowcount);
+      mysqli_free_result($result);
+   }
+   mysqli_close($connection_mysql);
+?></h2>
+
+</button>
                         
                                         
                     </div>
@@ -436,8 +474,27 @@ $cnt=$cnt+1;
                     </div>
 
                <div class="col-md-4">
-             <a href="generate_pdf_emailsub.php" class="btn btn-warning">REPORT</a>
+             <a href="generate_pdf_emailsub.php" class="btn btn-danger">REPORT</a>
+             <button type="button"  class="btn btn-info btn-rounded ">  
+                       <?php
+   $connection_mysql = mysqli_connect("localhost","root","","testingpixel");
+   
+   if (mysqli_connect_errno($connection_mysql)){
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+   }
+   $sql = "SELECT email FROM newsletter ";
+   
+   if ($result = mysqli_query($connection_mysql,$sql)){
+      $rowcount = mysqli_num_rows($result);
+      
+      printf("Total Subscribers - %d \n",$rowcount);
+      mysqli_free_result($result);
+   }
+   mysqli_close($connection_mysql);
+?></h2>
 
+</button>
+            
                         
           
 
@@ -490,8 +547,16 @@ $cnt=$cnt+1;
     </div>
 </div>
 
-
-
+<script src="js/custom.min.js"></script>
+<script src="js/lib/datatables/datatables.min.js"></script>
+    <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="js/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+    <script src="js/lib/datatables/datatables-init.js"></script>
 
 </body>
 </html>

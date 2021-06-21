@@ -39,11 +39,11 @@
 		    		<div class="row d-flex">
 		    			<div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-						    <span class="text">+ 1235 2355 98</span>
+						    <span class="text">+ 9874563214</span>
 					    </div>
 					    <div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-						    <span class="text">youremail@email.com</span>
+						    <span class="text">greencurry@email.com</span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
 						    <p class="mb-0 register-link"><span>Open hours:</span> <span>Monday - Sunday</span> <span>8:00AM - 9:00PM</span></p>
@@ -302,7 +302,7 @@
         <div class="row no-gutters d-flex align-items-stretch">
         	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
         		<div class="menus d-sm-flex ftco-animate align-items-stretch">
-              <div class="menu-img img" style="background-image: url(images/breakfast-1.jpg);"></div>
+              <div class="menu-img img" style="background-image: url(online-food-ordering/restaurantimage/fooditems/b1.jpg);"></div>
               <div class="text d-flex align-items-center">
 								<div>
 	              	<div class="d-flex">
@@ -323,7 +323,7 @@
         	</div>
         	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
         		<div class="menus d-sm-flex ftco-animate align-items-stretch">
-              <div class="menu-img img" style="background-image: url(images/food7.jpg);"></div>
+              <div class="menu-img img" style="background-image: url(online-food-ordering/restaurantimage/fooditems/b3.jpg);"></div>
               <div class="text d-flex align-items-center">
 								<div>
 	              	<div class="d-flex">
@@ -343,7 +343,7 @@
 
         	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
         		<div class="menus d-sm-flex ftco-animate align-items-stretch">
-              <div class="menu-img img order-md-last" style="background-image: url(images/breakfast-3.jpg);"></div>
+              <div class="menu-img img order-md-last" style="background-image: url(online-food-ordering/restaurantimage/fooditems/desitadka.jpg);"></div>
               <div class="text d-flex align-items-center">
 								<div>
 	              	<div class="d-flex">
@@ -362,7 +362,7 @@
         	</div>
         	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
         		<div class="menus d-sm-flex ftco-animate align-items-stretch">
-              <div class="menu-img img order-md-last" style="background-image: url(images/breakfast-5.jpg);"></div>
+              <div class="menu-img img order-md-last" style="background-image: url(online-food-ordering/restaurantimage/fooditems/lakeside.jpg);"></div>
               <div class="text d-flex align-items-center">
 								<div>
 	              	<div class="d-flex">
@@ -382,7 +382,7 @@
 
         	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
         		<div class="menus d-sm-flex ftco-animate align-items-stretch">
-              <div class="menu-img img" style="background-image: url(images/breakfast-6.jpg);"></div>
+              <div class="menu-img img" style="background-image: url(online-food-ordering/restaurantimage/fooditems/maratha.jpg);"></div>
               <div class="text d-flex align-items-center">
 								<div>
 	              	<div class="d-flex">
@@ -401,7 +401,7 @@
         	</div>
         	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
         		<div class="menus d-sm-flex ftco-animate align-items-stretch">
-              <div class="menu-img img" style="background-image: url(images/breakfast-2.jpg);"></div>
+              <div class="menu-img img" style="background-image: url(online-food-ordering/restaurantimage/fooditems/ssailela.jpg);"></div>
               <div class="text d-flex align-items-center">
 								<div>
 	              	<div class="d-flex">
@@ -564,13 +564,23 @@
 						  <div class="select-wrap one-third">
 							<div class="icon"><span class="ion-ios-arrow-down"></span></div>
 							<select name="restaurant" id="" required class="form-control">
-							  <option value="Hari Burger">Hari Burger</option>
+							<option value="Hari Burger">Hari Burger</option>
 							  <option value="The Great Kabab Factory">The Great Kabab Factory</option>
 							  <option value="Martini">Martini</option>
 							  <option value="Aarkay Vaishno Dhaba">Aarkay Vaishno Dhaba</option>
 							  <option value="hudson">hudson</option>
 							  <option value="kriyana store">kriyana store</option>
 							  <option value="Radhe-Krishna">Radhe-Krishna</option>
+							  <option value="Bombay-Burgers">Bombay-Burgers</option>
+							  <option value="Starboy Burgers & Shakes">Starboy Burgers & Shakes</option>
+							  <option value="Jimis Burger - Andheri">Jimis Burger - Andheri</option>
+							  <option value="Howra Burger">Howra Burger</option>
+							  <option value="Nino Burgers">Nino Burgers</option>
+							  <option value="Dreamland">Dreamland</option>
+							  <option value="Sai Leela">Sai Leela</option>
+							  <option value="Maratha Darbar">Maratha Darbar</option>
+							  <option value="Lakeside">Lakeside</option>
+							  <option value="Desi tadka">Desi tadka</option>
 							</select>
 						  </div>
 						</div>

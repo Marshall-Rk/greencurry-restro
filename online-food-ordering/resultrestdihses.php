@@ -91,11 +91,11 @@ session_start();
             <section class="restaurants-page">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-3">
+                        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-12">
                           
                           
-                            <div class="widget clearfix">
-                                <!-- /widget heading -->
+                            <!-- <div class="widget clearfix">
+                           
                                 <div class="widget-heading">
                                     <h3 class="widget-title text-dark">
                                  Popular tags
@@ -124,10 +124,10 @@ session_start();
                                     </a> </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- end:Widget -->
                         </div>
-                        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-9">
+                        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-12">
                         <a class="btn theme-btn mb-1" href="restaurants.php">Search-Restaurants</a>
                         <a class="btn theme-btn mb-1" href="restaurants.php">Search-Food</a>
                         <a class="btn theme-btn mb-1" href="index.php">Home</a>
