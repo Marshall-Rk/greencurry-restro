@@ -1,0 +1,2 @@
+razorpay test id
+rzp_test_z8rLozwR6AFPen

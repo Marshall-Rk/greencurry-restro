@@ -97,7 +97,7 @@
         </div>
       </div>
 
-      <div class="slider-item js-fullheight" style="background-image: url(images/bg_2.jpg);">
+      <div class="slider-item js-fullheight" style="background-image: url(images/bg_7.jpg);">
       	<div class="overlay"></div>
         <div class="container">
           <div class="row slider-text js-fullheight justify-content-center align-items-center" data-scrollax-parent="true">
@@ -244,13 +244,13 @@
         </div>
     	</div>
     </section>
-
-		<section class="ftco-section bg-light">
+	<!-- style="background-image: url(images/bg_7.jpg);background-size:cover" -->
+		<section class="ftco-section" >
 			<div class="container">
 				<div class="row justify-content-center mb-5 pb-2">
           <div class="col-md-12 text-center heading-section ftco-animate">
           	<span class="subheading">Services</span>
-            <h2 class="mb-4">Catering Services</h2>
+            <h2 class="mb-4 ">Catering Services</h2>
           </div>
         </div>
         <div class="row">
@@ -260,8 +260,8 @@
             		<span class="flaticon-cake"></span>
               </div>
               <div class="media-body p-2 mt-3">
-                <h3 class="heading">Birthday Party</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <h3 class="heading ">Birthday Party</h3>
+                <p class="">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
               </div>
             </div>      
           </div>
@@ -271,8 +271,8 @@
             		<span class="flaticon-meeting"></span>
               </div>
               <div class="media-body p-2 mt-3">
-                <h3 class="heading">Business Meetings</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <h3 class="heading ">Business Meetings</h3>
+                <p class="">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
               </div>
             </div>    
           </div>
@@ -282,8 +282,8 @@
             		<span class="flaticon-tray"></span>
               </div>
               <div class="media-body p-2 mt-3">
-                <h3 class="heading">Wedding Party</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <h3 class="heading ">Wedding Party</h3>
+                <p class="">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
               </div>
             </div>      
           </div>

@@ -261,6 +261,7 @@ table.table td i {
 
                <div class="col-md-4">
              <a href="generate_pdf_tablebooking.php" class="btn btn-danger">REPORT</a>
+
              <button type="button"  class="btn btn-info btn-rounded ">  
                        <?php
    $connection_mysql = mysqli_connect("localhost","root","","testingpixel");
@@ -278,7 +279,6 @@ table.table td i {
    }
    mysqli_close($connection_mysql);
 ?></h2>
-
 </button>
                </div>
 

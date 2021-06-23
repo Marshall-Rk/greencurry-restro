@@ -13,7 +13,7 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="#">
-    <title>Starter Template for Bootstrap</title>
+    <title>GreenCurry-Restaurants</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -45,7 +45,7 @@ session_start();
 							}
 						else
 							{
-									
+                                echo  '<li class="nav-item"><a href="cart.php" class="nav-link active">Cart</a> </li>';
 									
 										echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">your orders</a> </li>';
 									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
@@ -75,7 +75,7 @@ session_start();
             </div>
             <!-- end:Top links -->
             <!-- start: Inner page hero -->
-            <div class="inner-page-hero bg-image" data-image-src="images/img/wow.jpeg">
+            <div class="inner-page-hero bg-image" data-image-src="images/img/bg_10.jpg">
                 <div class="container"> </div>
                 <!-- end:Container -->
             </div>

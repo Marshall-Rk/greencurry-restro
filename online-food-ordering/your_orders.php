@@ -20,7 +20,7 @@ else
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="#">
-    <title>Starter Template for Bootstrap</title>
+    <title>GreenCurry-your-order</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -222,31 +222,15 @@ only screen and (max-width: 760px),
                                 <!-- /widget heading -->
                                 <div class="widget-heading">
                                     <h3 class="widget-title text-dark">
-                                 Popular tags
+                                Search
                               </h3>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="widget-body">
-                                    <ul class="tags">
-                                        <li> <a href="#" class="tag">
-                                    Pizza
-                                    </a> </li>
-                                        <li> <a href="#" class="tag">
-                                    Sendwich
-                                    </a> </li>
-                                        <li> <a href="#" class="tag">
-                                    Sendwich
-                                    </a> </li>
-                                        <li> <a href="#" class="tag">
-                                    Fish 
-                                    </a> </li>
-                                        <li> <a href="#" class="tag">
-                                    Desert
-                                    </a> </li>
-                                        <li> <a href="#" class="tag">
-                                    Salad
-                                    </a> </li>
-                                    </ul>
+                                <a class="btn theme-btn mb-1" href="restaurants.php">Search-Restaurants</a><br>
+                                <a class="btn theme-btn mb-1" href="restaurants.php">Search-Food</a><br>
+                                <a class="btn theme-btn mb-1" href="index.php">Home</a><br>
+
                                 </div>
                             </div>
                             <!-- end:Widget -->
@@ -288,7 +272,7 @@ only screen and (max-width: 760px),
 												<tr>	
 														 <td data-column="Item"> <?php echo $row['title']; ?></td>
 														  <td data-column="Quantity"> <?php echo $row['quantity']; ?></td>
-														  <td data-column="price">$<?php echo $row['price']; ?></td>
+														  <td data-column="price">₹<?php echo $row['price']; ?></td>
 														   <td data-column="status"> 
 														   <?php 
 																			$status=$row['status'];

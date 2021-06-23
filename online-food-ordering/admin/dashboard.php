@@ -147,9 +147,11 @@ else
 						 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hide-menu">Orders</span></a>
                             <ul aria-expanded="false" class="collapse">
 								<li><a href="all_orders.php">All Orders</a></li>
+                                <li><a href="all_orders_online.php">Online-Payment</a></li>
 								  
                             </ul>
                         </li>
+                        
                          
                     </ul>
                 </nav>
@@ -243,6 +245,26 @@ else
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle"> 
+                                    <span><i class="fa fa-usd f-s-40 color-success" aria-hidden="true"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2>₹<?php $sql="select price from users_orders";
+												$result=mysqli_query($db,$sql); 
+													$rws=mysqli_num_rows($result);
+													
+													echo $rws;?></h2>
+                                    <p class="m-b-0">Earning</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
 	
                 </div>
                 <!-- End PAge Content -->

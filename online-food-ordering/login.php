@@ -10,18 +10,33 @@
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
 <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"
+  rel="stylesheet"
+/>
       <link rel="stylesheet" href="css/login.css">
 
 	  <style type="text/css">
 	  #buttn{
 		  color:#fff;
-		  background-color: #ff3300;
+	
 	  }
 	  </style>
   
 </head>
 
-<body>
+<body >
 <?php
 include("connection/connect.php"); //INCLUDE CONNECTION
 error_reporting(0); // hide undefine index errors
@@ -30,7 +45,7 @@ if(isset($_POST['submit']))   // if button is submit
 {
 	$username = $_POST['username'];  //fetch records from login form
 	$password = $_POST['password'];
-	
+	$_SESSION["email"] = $email;
 	if(!empty($_POST["submit"]))   // if records were not empty
      {
 	$loginquery ="SELECT * FROM users WHERE username='$username' && password='".md5($password)."'"; //selecting matching records
@@ -39,6 +54,7 @@ if(isset($_POST['submit']))   // if button is submit
 	
 	                        if(is_array($row))  // if matching records in the array & if everything is right
 								{
+                  $_SESSION["user_email"] = $row['email'];
                                     	$_SESSION["user_id"] = $row['u_id']; // put user id into temp session
 										 header("refresh:1;url=index.php"); // redirect to index.php page
 	                            } 
@@ -56,11 +72,9 @@ if(isset($_POST['submit']))   // if button is submit
 <!-- Input Mixin-->
 <!-- Button Mixin-->
 <!-- Pen Title-->
-<div class="pen-title">
-  <h1>Login Form</h1>
-</div>
+
 <!-- Form Module-->
-<div class="module form-module">
+<div class="module form-module mt-5">
   <div class="toggle">
    
   </div>
@@ -71,8 +85,8 @@ if(isset($_POST['submit']))   // if button is submit
     <form action="" method="post">
       <input type="text" placeholder="Username"  name="username"/>
       <input type="password" placeholder="Password" name="password"/>
-      <input type="submit" id="buttn" name="submit" value="login" />
-	  <a href="../index.php">HOME</a>
+      <input type="submit" class="btn btn-success id="buttn" name="submit" value="login" />
+	  <a class="btn btn-danger" type="button" href="../index.php">HOME</a>
     </form>
   </div>
  

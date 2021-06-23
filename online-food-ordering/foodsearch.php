@@ -18,7 +18,7 @@ include_once 'product-action.php'; //including controller
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="#">
-    <title>Starter Template for Bootstrap</title>
+    <title>GreenCurry-Food</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -50,7 +50,7 @@ include_once 'product-action.php'; //including controller
 						else
 							{
 									
-									
+                                echo  '<li class="nav-item"><a href="cart.php" class="nav-link active">Cart</a> </li>';
 										echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">your orders</a> </li>';
 									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
 							}

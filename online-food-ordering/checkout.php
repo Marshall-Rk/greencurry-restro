@@ -41,7 +41,7 @@ else{
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="#">
-    <title>Starter Template for Bootstrap</title>
+    <title>GreenCurry-Checkout</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -155,14 +155,80 @@ else{
                                                 <label class="custom-control custom-radio  m-b-20">
                                                     <input name="mod" id="radioStacked1" checked value="COD" type="radio" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Payment on delivery</span>
                                                     <br> <span>Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span> </label>
+                                                    <p class="text-xs-center"> <input type="submit" onclick="return confirm('Are you sure?');" name="submit"  class="btn btn-success btn-block" value="Order now"> </p>
                                             </li>
                                             <li>
-                                                <label class="custom-control custom-radio  m-b-10">
-                                                    <input name="mod"  type="radio" value="paypal" disabled class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Paypal <img src="images/paypal.jpg" alt="" width="90"></span> </label>
-                                            </li>
-                                        </ul>
-                                        <p class="text-xs-center"> <input type="submit" onclick="return confirm('Are you sure?');" name="submit"  class="btn btn-outline-success btn-block" value="Order now"> </p>
+                                            <label class="custom-control custom-radio  m-b-20">
+                                                    <input name="mod" id="radioStacked1" checked value="COD" type="radio" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">OnlinePayment  <img src="images/paypal.jpg" alt="" width="90"></span>
+                                                    <br>  </label>
+</br>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<form class="form-inline">
+
+<!-- <?php
+echo '<pre>';
+var_dump($_SESSION);
+echo '</pre>';
+?> -->
+ <label for="name">Name:</label>
+
+    <input type="textbox" name="name" id="name"><br/><br/>
+    <label for="email">Email:</label>
+    <input type="textbox" name="email" id="email"><br/><br/>
+    <label for="Phone">Phone:</label>  
+    <input type="textbox" name="phone" id="phone"><br/><br/>
+    <label for="amt">Total:</label>
+    <input type="textbox" name="amt" id="amt" value="<?php echo $item_total; ?>"readonly/><br/><br/>
+    <input type="button"  class="btn  theme-btn btn-block float-right" name="btn" id="btn" value="Pay Online" onclick="pay_now()"/>
+
+</form>
+<!-- <?php echo $item_total; ?> -->
+<script>
+    function pay_now(){
+        var phone=jQuery('#phone').val();
+        var email=jQuery('#email').val();
+        var name=jQuery('#name').val();
+        var amt=jQuery('#amt').val();
+        
+         jQuery.ajax({
+               type:'post',
+               url:'payment_process.php',
+               data:"amt="+amt+"&name="+name+"&email="+email+"&phone="+phone,
+               success:function(result){
+                   var options = {
+                        "key": "rzp_test_z8rLozwR6AFPen", 
+                        "amount": amt*100, 
+                        "currency": "INR",
+                        "name": "Acme Corp",
+                        "description": "Test Transaction",
+                        "image": "https://image.freepik.com/free-vector/logo-sample-text_355-558.jpg",
+                        "handler": function (response){
+                           jQuery.ajax({
+                               type:'post',
+                               url:'payment_process.php',
+                               data:"payment_id="+response.razorpay_payment_id,
+                               success:function(result){
+                                   window.location.href="thank_you.php";
+                               }
+                           });
+                        }
+                    };
+                    var rzp1 = new Razorpay(options);
+                    rzp1.open();
+               }
+           });
+        
+        
+    }
+</script>
                                     </div>
+                                                    
+                                            </li>
+                                            </li> 
+                                        </ul>
+                                       
 									</form>
                                 </div>
                             </div>

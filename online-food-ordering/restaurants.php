@@ -13,7 +13,7 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="#">
-    <title>Starter Template for Bootstrap</title>
+    <title>GreenCurry-Restaurants</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -46,6 +46,7 @@ session_start();
 									
 									
 										echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">your orders</a> </li>';
+                                        echo  '<li class="nav-item"><a href="cart.php" class="nav-link active">Cart</a> </li>';
 									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
 							}
 
@@ -72,7 +73,7 @@ session_start();
             </div>
             <!-- end:Top links -->
             <!-- start: Inner page hero -->
-            <div class="inner-page-hero bg-image" data-image-src="images/img/wow.jpeg">
+            <div class="inner-page-hero bg-image" data-image-src="images/img/bg_10.jpg">
                 <div class="container"> </div>
                 <!-- end:Container -->
             </div>
@@ -124,6 +125,44 @@ session_start();
                             </div> -->
                             <!-- end:Widget -->
                         </div>
+                        <button type="button"  class="btn theme-btn btn-rounded ml-1 ">  
+                       <?php
+   $connection_mysql = mysqli_connect("localhost","root","","online_rest");
+   
+   if (mysqli_connect_errno($connection_mysql)){
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+   }
+   $sql = "SELECT email FROM restaurant ";
+   
+   if ($result = mysqli_query($connection_mysql,$sql)){
+      $rowcount = mysqli_num_rows($result);
+      
+      printf("No. of Restaurants - %d \n",$rowcount);
+      mysqli_free_result($result);
+   }
+   mysqli_close($connection_mysql);
+?></h2>
+</button>
+<button type="button"  class="btn theme-btn btn-rounded ml-1 ">  
+                       <?php
+   $connection_mysql = mysqli_connect("localhost","root","","online_rest");
+   
+   if (mysqli_connect_errno($connection_mysql)){
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+   }
+   $sql = "SELECT title FROM dishes ";
+   
+   if ($result = mysqli_query($connection_mysql,$sql)){
+      $rowcount = mysqli_num_rows($result);
+      
+      printf("No. of Dishes - %d \n",$rowcount);
+      mysqli_free_result($result);
+   }
+   mysqli_close($connection_mysql);
+?></h2>
+</button>
+
+
                         <div class="col-xs-12 col-sm-7 col-md-7 col-lg-12">
                             <div class="restaurant-entry">
                                 <div class="row">
@@ -151,6 +190,7 @@ session_start();
                     <div class="col-sm-4">
                         <div class="title-block pull-left">
                             <h4 class="btn theme-btn" >Featured restaurants</h4> </div>
+                            
                     </div>
                     <div class="col-sm-8">
                         <!-- restaurants filter nav starts -->

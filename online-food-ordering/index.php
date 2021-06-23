@@ -55,7 +55,7 @@ session_start(); //start temp session until logout/browser closed
 									//if user is login
                                     echo $user_id; 
 									echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">your orders</a> </li>';
-
+                                    echo  '<li class="nav-item"><a href="cart.php" class="nav-link active">Cart</a> </li>';
 									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
 							}
 
@@ -69,7 +69,7 @@ session_start(); //start temp session until logout/browser closed
             <!-- /.navbar -->
         </header>
         <!-- banner part starts -->
-        <section class="hero bg-image" data-image-src="images/img/wow.jpeg">
+        <section class="hero bg-image" data-image-src="images/img/bg_7.jpg">
             <div class="hero-inner">
                 <div class="container text-center hero-text font-white">
                     <h1>Order Delivery & Take-Out </h1>

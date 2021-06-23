@@ -18,7 +18,7 @@ include_once 'product-action.php'; //including controller
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="#">
-    <title>Starter Template for Bootstrap</title>
+    <title>GreenCurry-Dishes</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -35,7 +35,7 @@ include_once 'product-action.php'; //including controller
             <nav class="navbar navbar-dark">
                 <div class="container">
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.html"> <img class="img-rounded" src="images/food-picky-logo.png" alt=""> </a>
+                    <a class="navbar-brand" href=".../index.php"> <img class="img-rounded" src="images/food-picky-logo.png" alt=""> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                        <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
@@ -50,7 +50,7 @@ include_once 'product-action.php'; //including controller
 						else
 							{
 									
-									
+                                echo  '<li class="nav-item"><a href="cart.php" class="nav-link active">Cart</a> </li>';
 										echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">your orders</a> </li>';
 									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
 							}
@@ -81,7 +81,7 @@ include_once 'product-action.php'; //including controller
 									     $rows=mysqli_fetch_array($ress);
 										  
 										  ?>
-            <section class="inner-page-hero bg-image" data-image-src="images/img/bg_3.jpg">
+            <section class="inner-page-hero bg-image" data-image-src="images/img/bg.jpg">
                 <div class="profile">
                     <div class="container">
                         <div class="row">
@@ -92,7 +92,7 @@ include_once 'product-action.php'; //including controller
                             </div>
 							
                             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 profile-desc" >
-                                <div class="pull-left right-text black-txt px-2 py-2" style="background:#CA451D; opacity:0.9;border-radius:19px;">
+                                <div class="pull-left right-text white-txt px-2 py-1 mb-1" style="background: #000; opacity:0.9;border-radius:19px;">
                                     <h6><a href="#"><?php echo $rows['title']; ?></a></h6>
                                     <p><?php echo $rows['address']; ?></p>
                                     <ul class="nav nav-inline">
