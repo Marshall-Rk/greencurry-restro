@@ -182,12 +182,13 @@ echo '</pre>';
                                     <table id="myTable" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
+                                            <th>Token</th>	
                                                 <th>Username</th>		
                                                 <th>email</th>
                                                 <th>phone</th>
                                                 <th>Amount</th>
 												<th>Pay_ID</th>
-																					
+                                               								
 												 <th>payment_status</th>
 												  <th>Action</th>
 												 
@@ -212,7 +213,7 @@ echo '</pre>';
 																				?>
 																				<?php
 																					echo ' <tr>
-                                                                                    
+                                                                                    <td>'.$rows['token'].'</td>
 																					           <td>'.$rows['name'].'</td>
 																								<td>'.$rows['email'].'</td>
 																								<td>'.$rows['phone'].'</td>
@@ -222,7 +223,7 @@ echo '</pre>';
 																								?>
 																								
 																						<?php																									
-																							echo '	<td>'.$rows['payment_status'].'</td>';
+																							echo '	<td style="color:green"> '.$rows['payment_status'].' </td>';
 																							?>
 																									 <td>
 																									 <a href="delete_orders.php?order_del=<?php echo $rows['o_id'];?>" onclick="return confirm('Are you sure?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 

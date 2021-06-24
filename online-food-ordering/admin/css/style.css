@@ -292,7 +292,7 @@ h6 {
   color: #00897b;
 }
 .text-dark {
-  color: #cbaa82;
+  color: #030303;
 }
 .text-themecolor {
   color: #1976d2;
@@ -2031,7 +2031,7 @@ textarea {
 .footer {
   background: #ffffff none repeat scroll 0 0;
   border-top: 1px solid rgba(120, 130, 140, 0.13);
-  color: #cbaa82;
+  color: #050505;
   left: 0;
   padding: 17px 15px;
   position: absolute;

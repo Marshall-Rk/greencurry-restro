@@ -17,7 +17,8 @@ if(isset($_POST['submit']))
 	
 	                        if(is_array($row))
 								{
-									
+									$_SESSION["email"] = $row['email'];
+									$_SESSION["username"] = $row['username'];
                                     	$_SESSION["adm_id"] = $row['adm_id'];
 										 header("refresh:1;url=dashboard.php");
 	                            } 

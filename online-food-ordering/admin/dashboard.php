@@ -36,10 +36,10 @@ else
 
 <body class="fix-header">
     <!-- Preloader - style you can find in spinners.css -->
-    <div class="preloader">
+    <!-- <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
 			<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
-    </div>
+    </div> -->
     <!-- Main wrapper  -->
     <div id="main-wrapper">
         <!-- header header  -->
@@ -165,8 +165,12 @@ else
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-warning">Dashboard - Welcome </h3> <?php echo $_SESSION['username']; ?></div>
-               
+                    <h3 class="text-dark ">Dashboard - Welcome </h3> <?php echo $_SESSION['username']; ?></div>
+               <!-- <?php
+echo '<pre>';
+var_dump($_SESSION);
+echo '</pre>';
+?> -->
             </div>
             <!-- End Bread crumb -->
             <!-- Container fluid  -->
@@ -250,21 +254,127 @@ else
                         <div class="card p-30">
                             <div class="media">
                                 <div class="media-left meida media-middle"> 
-                                    <span><i class="fa fa-usd f-s-40 color-success" aria-hidden="true"></i></span>
+                                    <span><i class="fa fa-cutlery f-s-40 color-info" aria-hidden="true"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2>₹<?php $sql="select price from users_orders";
-												$result=mysqli_query($db,$sql); 
-													$rws=mysqli_num_rows($result);
-													
-													echo $rws;?></h2>
-                                    <p class="m-b-0">Earning</p>
+                                    <h2><?php 
+                                    
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "online_rest";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT SUM(quantity) AS value_sum FROM users_orders";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "  " . $row["value_sum"];
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+                                    
+                                    
+                                    ?></h2>
+                                    <p class="m-b-0">No. Of Dishes Sold</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle"> 
+                                    <span><i class="fa fa-usd f-s-40 color-success" aria-hidden="true"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2>₹<?php 
+                                    
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "online_rest";
 
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT SUM(price) AS value_sum FROM users_orders";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "  " . $row["value_sum"];
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+                                    
+                                    
+                                    ?></h2>
+                                    <p class="m-b-0">Offline_payment</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle"> 
+                                    <span><i class="fa fa-usd f-s-40 color-success" aria-hidden="true"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2>₹<?php 
+                                    
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "online_rest";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT SUM(amount) AS value_sum FROM payment";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "  " . $row["value_sum"];
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+                                    
+                                    
+                                    ?></h2>
+                                    <p class="m-b-0">Online_Payment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 	
                 </div>
                 <!-- End PAge Content -->

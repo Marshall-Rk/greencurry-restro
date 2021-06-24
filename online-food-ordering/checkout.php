@@ -174,19 +174,22 @@ echo '</pre>';
 ?> -->
  <label for="name">Name:</label>
 
-    <input type="textbox" name="name" id="name"><br/><br/>
+    <input class="form-control " style="background-color:#D3D3D3; color:black" type="textbox" name="name" id="name"><br/>
     <label for="email">Email:</label>
-    <input type="textbox" name="email" id="email"><br/><br/>
+    <input class="form-control " style="background-color:#D3D3D3; color:black" type="textbox" name="email" id="email"><br/>
     <label for="Phone">Phone:</label>  
-    <input type="textbox" name="phone" id="phone"><br/><br/>
-    <label for="amt">Total:</label>
-    <input type="textbox" name="amt" id="amt" value="<?php echo $item_total; ?>"readonly/><br/><br/>
+    <input class="form-control " style="background-color:#D3D3D3; color:black" type="textbox" name="phone" id="phone"><br/>
+    <label for="amt">Token:</label>
+    <input class="form-control " style="background-color:#D3D3D3; color:black" type="textbox" name="token" id="token" value="<?php echo rand(); ?>"readonly/><br/>
+    <label for="amt">Total:₹</label>
+    <input class="form-control " style="background-color:#D3D3D3; color:black" type="textbox" name="amt" id="amt" value="<?php echo $item_total; ?>"readonly/><br/>
     <input type="button"  class="btn  theme-btn btn-block float-right" name="btn" id="btn" value="Pay Online" onclick="pay_now()"/>
 
 </form>
 <!-- <?php echo $item_total; ?> -->
 <script>
     function pay_now(){
+        var token=jQuery('#token').val();
         var phone=jQuery('#phone').val();
         var email=jQuery('#email').val();
         var name=jQuery('#name').val();
@@ -195,7 +198,7 @@ echo '</pre>';
          jQuery.ajax({
                type:'post',
                url:'payment_process.php',
-               data:"amt="+amt+"&name="+name+"&email="+email+"&phone="+phone,
+               data:"amt="+amt+"&name="+name+"&email="+email+"&phone="+phone+"&token="+token,
                success:function(result){
                    var options = {
                         "key": "rzp_test_z8rLozwR6AFPen", 
