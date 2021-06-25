@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2021 at 12:33 PM
+-- Generation Time: Jun 24, 2021 at 05:13 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -107,6 +107,42 @@ INSERT INTO `dishes` (`d_id`, `rs_id`, `title`, `slogan`, `price`, `img`) VALUES
 (27, 57, 'Chole', 'Amritsari style', '311.00', '60cdc69191db8.jpg'),
 (28, 56, 'Falafal', 'Mexican soul', '620.00', '60cdc6bb0c20e.jpg'),
 (29, 54, 'Veg-Thali', 'From all over india', '1200.00', '60cdc72f54c36.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment`
+--
+
+CREATE TABLE `payment` (
+  `id` int(11) NOT NULL,
+  `email` varchar(222) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `amount` int(11) NOT NULL,
+  `payment_status` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payment_id` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `added_on` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`id`, `email`, `phone`, `name`, `amount`, `payment_status`, `token`, `payment_id`, `added_on`) VALUES
+(2, 'rajkamalgautam2001@gmail.com', '09503182793', 'Rajkamal_Gottam', 22, 'complete', '82324440', 'pay_HQQkdHpKBXqFCd', '2021-06-23 10:11:29'),
+(3, 'rajkamalgautam2001@gmail.com', '09503182793', 'Rajkamal_Gottam', 12, 'complete', '859041190', 'pay_HQQmrxLf472b0M', '2021-06-23 10:13:50'),
+(4, 'rajkamalgautam2001@gmail.com', '09503182793', 'Rajkamal_Gottam', 11, 'complete', '1435113788', 'pay_HQQq9gU7OjVg0s', '2021-06-23 10:14:56'),
+(17, 'sashi@gmail.com', '7258745874', 'shashi gautam', 45, 'complete', '529447233', 'pay_HQRAHVk8d4zYer', '2021-06-23 10:36:00'),
+(18, 'm.s.gottam@gmail.com', '9858698569', 'mansingh gautam', 1970, 'complete', '2107906587', 'pay_HQRKGhIJZBzYRA', '2021-06-23 10:45:19'),
+(32, 'vinayakmakhija@gmail.com', '9658252569', 'vinayak', 86, 'complete', '1907116662', 'pay_HQV5fGIytoreoj', '2021-06-23 02:25:21'),
+(39, 'rajkamalgautam2001@gmail.com', '09503182793', 'Rajkamal_Gottam', 86, 'complete', '550962968', 'pay_HQVJoyPPShKGl0', '2021-06-23 02:39:46'),
+(40, 'lubnag@gmail.com', '9856985475', 'lubna', 113, 'complete', '270375306', 'pay_HQqXwwd9PHa8Im', '2021-06-24 11:25:33'),
+(41, 'chandrakamalgautam2424242@gmail.com', '9696521254', 'chandrakamal', 600, 'complete', '2059038288', 'pay_HQqnI9bP5WgkMv', '2021-06-24 11:40:01'),
+(42, 'rajkamalgautam2001@gmail.com', '09503182793', 'Rajkamal_Gottam', 70, 'complete', '1083829798', 'pay_HQrFOPdqFxGfXZ', '2021-06-24 12:06:40'),
+(46, 'rehan@gmail.com', '7066301198', 'rehan', 70, 'pending', '356651880', '', '2021-06-24 12:13:35'),
+(47, 'sneha23232@gmail.com', '9874512630', 'sneha shetty', 25, 'complete', '1285716379', 'pay_HQrOgUtcmVr1qF', '2021-06-24 12:15:28');
 
 -- --------------------------------------------------------
 
@@ -250,6 +286,7 @@ CREATE TABLE `users_orders` (
   `title` varchar(222) NOT NULL,
   `quantity` int(222) NOT NULL,
   `price` decimal(10,2) NOT NULL,
+  `total` varchar(222) NOT NULL,
   `status` varchar(222) DEFAULT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -258,11 +295,15 @@ CREATE TABLE `users_orders` (
 -- Dumping data for table `users_orders`
 --
 
-INSERT INTO `users_orders` (`o_id`, `u_id`, `title`, `quantity`, `price`, `status`, `date`) VALUES
-(37, 31, 'jklmno', 5, '17.99', 'closed', '2018-04-18 19:51:50'),
-(38, 31, 'Red Robins Chick on a Stick', 2, '34.99', NULL, '2018-04-18 19:52:34'),
-(39, 33, 'Bonefish', 1, '55.77', NULL, '2021-06-18 06:39:22'),
-(40, 33, 'Hard Rock Cafe', 35, '22.12', 'in process', '2021-06-18 06:40:07');
+INSERT INTO `users_orders` (`o_id`, `u_id`, `title`, `quantity`, `price`, `total`, `status`, `date`) VALUES
+(37, 31, 'jklmno', 5, '17.99', '', 'closed', '2018-04-18 19:51:50'),
+(38, 31, 'Red Robins Chick on a Stick', 2, '34.99', '', NULL, '2018-04-18 19:52:34'),
+(39, 33, 'Bonefish', 1, '55.77', '', NULL, '2021-06-18 06:39:22'),
+(40, 33, 'Hard Rock Cafe', 35, '22.12', '', 'in process', '2021-06-18 06:40:07'),
+(41, 33, 'Lyfe Kitchens Tofu Taco', 2, '11.99', '', NULL, '2021-06-23 12:35:23'),
+(42, 33, 'Uno Pizzeria & Grill', 5, '12.35', '', NULL, '2021-06-23 12:35:23'),
+(43, 33, 'Lyfe Kitchens Tofu Taco', 2, '11.99', '', NULL, '2021-06-23 12:38:11'),
+(44, 33, 'Uno Pizzeria & Grill', 5, '12.35', '', NULL, '2021-06-23 12:38:11');
 
 --
 -- Indexes for dumped tables
@@ -285,6 +326,12 @@ ALTER TABLE `admin_codes`
 --
 ALTER TABLE `dishes`
   ADD PRIMARY KEY (`d_id`);
+
+--
+-- Indexes for table `payment`
+--
+ALTER TABLE `payment`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `remark`
@@ -339,6 +386,12 @@ ALTER TABLE `dishes`
   MODIFY `d_id` int(222) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
+-- AUTO_INCREMENT for table `payment`
+--
+ALTER TABLE `payment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
+--
 -- AUTO_INCREMENT for table `remark`
 --
 ALTER TABLE `remark`
@@ -366,7 +419,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users_orders`
 --
 ALTER TABLE `users_orders`
-  MODIFY `o_id` int(222) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `o_id` int(222) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

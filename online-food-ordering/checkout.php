@@ -174,16 +174,16 @@ echo '</pre>';
 ?> -->
  <label for="name">Name:</label>
 
-    <input class="form-control " style="background-color:#D3D3D3; color:black" type="textbox" name="name" id="name"><br/>
+    <input class="form-control " style="background-color:#D3D3D3; color:black" type="textbox" name="name"  id="name"><br/>
     <label for="email">Email:</label>
-    <input class="form-control " style="background-color:#D3D3D3; color:black" type="textbox" name="email" id="email"><br/>
+    <input class="form-control " style="background-color:#D3D3D3; color:black" type="textbox" name="email"  id="email"><br/>
     <label for="Phone">Phone:</label>  
-    <input class="form-control " style="background-color:#D3D3D3; color:black" type="textbox" name="phone" id="phone"><br/>
+    <input class="form-control " style="background-color:#D3D3D3; color:black" type="textbox" name="phone"  id="phone"><br/>
     <label for="amt">Token:</label>
     <input class="form-control " style="background-color:#D3D3D3; color:black" type="textbox" name="token" id="token" value="<?php echo rand(); ?>"readonly/><br/>
     <label for="amt">Total:₹</label>
     <input class="form-control " style="background-color:#D3D3D3; color:black" type="textbox" name="amt" id="amt" value="<?php echo $item_total; ?>"readonly/><br/>
-    <input type="button"  class="btn  theme-btn btn-block float-right" name="btn" id="btn" value="Pay Online" onclick="pay_now()"/>
+    <input type="button"  class="btn  theme-btn btn-block float-right" name="submit" id="btn" value="Pay Online" onclick="pay_now()"/>
 
 </form>
 <!-- <?php echo $item_total; ?> -->
