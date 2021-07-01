@@ -35,7 +35,7 @@ include('db.php');
 
 
 
-if(isset($_POST['amt']) && isset($_POST['name']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['token'])  ){
+if(isset($_POST['amt']) && isset($_POST['name']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['token']) && isset($_POST['address'])  ){
     $amt=$_POST['amt'];
     $name=$_POST['name'];
     $payment_status="pending";
@@ -43,8 +43,9 @@ if(isset($_POST['amt']) && isset($_POST['name']) && isset($_POST['email']) && is
     $email=$_POST['email'];
     $phone=$_POST['phone'];
     $token=$_POST['token'];
+    $address=$_POST['address'];
 
-    mysqli_query($con,"insert into payment(name,amount,payment_status,added_on,email,phone,token) values('$name','$amt','$payment_status','$added_on','$email','$phone','$token')");
+    mysqli_query($con,"insert into payment(name,amount,payment_status,added_on,email,phone,token,address) values('$name','$amt','$payment_status','$added_on','$email','$phone','$token','$address')");
     $_SESSION['OID']=mysqli_insert_id($con);
 }
 

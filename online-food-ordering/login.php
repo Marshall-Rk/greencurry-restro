@@ -45,7 +45,9 @@ if(isset($_POST['submit']))   // if button is submit
 {
 	$username = $_POST['username'];  //fetch records from login form
 	$password = $_POST['password'];
-	$_SESSION["email"] = $email;
+	$_SESSION["username"] = $username;
+  
+  $_SESSION["email"] = $row['email'];
 	if(!empty($_POST["submit"]))   // if records were not empty
      {
 	$loginquery ="SELECT * FROM users WHERE username='$username' && password='".md5($password)."'"; //selecting matching records
@@ -54,11 +56,14 @@ if(isset($_POST['submit']))   // if button is submit
 	
 	                        if(is_array($row))  // if matching records in the array & if everything is right
 								{
-                  $_SESSION["user_email"] = $row['email'];
-                                    	$_SESSION["user_id"] = $row['u_id']; // put user id into temp session
-										 header("refresh:1;url=index.php"); // redirect to index.php page
-	                            } 
-							else
+                        $_SESSION["phone"] = $row['phone'];
+                        $_SESSION["email"] = $row['email'];
+                        $_SESSION["address"] = $row['address'];
+                        $_SESSION["username"] = $row['username'];
+                        $_SESSION["user_id"] = $row['u_id']; // put user id into temp session
+                          header("refresh:1;url=index.php"); // redirect to index.php page
+                                    } 
+                    else
 							    {
                                       	$message = "Invalid Username or Password!"; // throw error
                                 }

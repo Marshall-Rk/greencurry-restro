@@ -1,3 +1,30 @@
+<?php
+
+// php select option value from database
+
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$databaseName = "online_rest";
+
+// connect to mysql database
+
+$connect = mysqli_connect($hostname, $username, $password, $databaseName);
+
+// mysql select query
+$query = "SELECT * FROM `restaurant`";
+
+// for method 1
+
+$result1 = mysqli_query($connect, $query);
+
+// for method 2
+
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -70,7 +97,7 @@
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 			  <li class="nav-item"><a href="online-food-ordering/restaurants.php" class="nav-link">Restaurants</a></li>
 			  <li class="nav-item"><a href="online-food-ordering" class="nav-link">Order</a></li>
-	          <li class="nav-item cta"><a href="reservation.html" class="nav-link">Book a table</a></li>
+	          <li class="nav-item cta"><a href="reservation.php" class="nav-link">Book a table</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -150,29 +177,16 @@
 						  <label for="">Restaurant</label>
 						  <div class="select-wrap one-third">
 							<div class="icon"><span class="ion-ios-arrow-down"></span></div>
+
 							<select name="restaurant" id="" required class="form-control">
+							<?php while($row1 = mysqli_fetch_array($result1)):;?>
 
-							  <option value="Hari Burger">Hari Burger</option>
-							  <option value="The Great Kabab Factory">The Great Kabab Factory</option>
-							  <option value="Martini">Martini</option>
-							  <option value="Aarkay Vaishno Dhaba">Aarkay Vaishno Dhaba</option>
-							  <option value="hudson">hudson</option>
-							  <option value="kriyana store">kriyana store</option>
-							  <option value="Radhe-Krishna">Radhe-Krishna</option>
-							  <option value="Bombay-Burgers">Bombay-Burgers</option>
-							  <option value="Starboy Burgers & Shakes">Starboy Burgers & Shakes</option>
-							  <option value="Jimis Burger - Andheri">Jimis Burger - Andheri</option>
-							  <option value="Howra Burger">Howra Burger</option>
-							  <option value="Nino Burgers">Nino Burgers</option>
-							  <option value="Dreamland">Dreamland</option>
-							  <option value="Sai Leela">Sai Leela</option>
-							  <option value="Maratha Darbar">Maratha Darbar</option>
-							  <option value="Lakeside">Lakeside</option>
-							  <option value="Desi tadka">Desi tadka</option>
-							
+<option value="<?php echo $row1[2];?>"><?php echo $row1[2];?></option>
 
-
+<?php endwhile;?>
 							</select>
+
+							
 						  </div>
 						</div>
 					  </div>

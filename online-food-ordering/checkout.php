@@ -24,7 +24,7 @@ else{
 						
 														mysqli_query($db,$SQL);
 														
-														$success = "<h2><font color=green>Thankyou! Your Order Placed successfully!</h2>";
+														$success = "<h2><font color=green>Thankyou! Your Order Placed successfully!<font color=red> Pay online by clicking Below</h2>";
 
 														
 														
@@ -79,12 +79,17 @@ else{
 							}
 
 						?>
-							 
+							 <li class="nav-item"> <a class="nav-link active text-success" type="button" href="#"><i class="fa fa-user" aria-hidden="true"></i> <?php echo $_SESSION['username']?><span class="sr-only"></span></a> </li>
                         </ul>
                     </div>
                 </div>
             </nav>
             <!-- /.navbar -->
+             <!-- <?php
+echo '<pre>';
+var_dump($_SESSION);
+echo '</pre>';
+?> -->
         </header>
         <div class="page-wrapper">
             <div class="top-links">
@@ -167,28 +172,32 @@ else{
 
 <form class="form-inline">
 
-<!-- <?php
+ <!-- <?php
 echo '<pre>';
 var_dump($_SESSION);
 echo '</pre>';
-?> -->
+?>  -->
  <label for="name">Name:</label>
 
-    <input class="form-control " style="background-color:#D3D3D3; color:black" type="textbox" name="name"  id="name"><br/>
+    <input class="form-control " style="background-color:#D3D3D3; color:black" value="<?php echo $_SESSION['username'] ?>"readonly type="textbox" name="name"  id="name"><br/>
     <label for="email">Email:</label>
-    <input class="form-control " style="background-color:#D3D3D3; color:black" type="textbox" name="email"  id="email"><br/>
+    <input class="form-control " style="background-color:#D3D3D3; color:black" value="<?php echo $_SESSION['email'] ?>"readonly type="textbox" name="email"  id="email"><br/>
+    <label for="address">address:</label>
+    <input class="form-control " style="background-color:#D3D3D3; color:black" value="<?php echo $_SESSION['address'] ?>"readonly type="textbox" name="address"  id="address"><br/>
     <label for="Phone">Phone:</label>  
-    <input class="form-control " style="background-color:#D3D3D3; color:black" type="textbox" name="phone"  id="phone"><br/>
+    <input class="form-control " style="background-color:#D3D3D3; color:black" value="<?php echo $_SESSION['phone'] ?>"readonly type="textbox" name="phone"  id="phone"><br/>
     <label for="amt">Token:</label>
     <input class="form-control " style="background-color:#D3D3D3; color:black" type="textbox" name="token" id="token" value="<?php echo rand(); ?>"readonly/><br/>
     <label for="amt">Total:₹</label>
     <input class="form-control " style="background-color:#D3D3D3; color:black" type="textbox" name="amt" id="amt" value="<?php echo $item_total; ?>"readonly/><br/>
+    
     <input type="button"  class="btn  theme-btn btn-block float-right" name="submit" id="btn" value="Pay Online" onclick="pay_now()"/>
 
 </form>
 <!-- <?php echo $item_total; ?> -->
 <script>
     function pay_now(){
+        var address=jQuery('#address').val();
         var token=jQuery('#token').val();
         var phone=jQuery('#phone').val();
         var email=jQuery('#email').val();
@@ -198,7 +207,7 @@ echo '</pre>';
          jQuery.ajax({
                type:'post',
                url:'payment_process.php',
-               data:"amt="+amt+"&name="+name+"&email="+email+"&phone="+phone+"&token="+token,
+               data:"amt="+amt+"&name="+name+"&email="+email+"&phone="+phone+"&token="+token+"&address="+address,
                success:function(result){
                    var options = {
                         "key": "rzp_test_z8rLozwR6AFPen", 

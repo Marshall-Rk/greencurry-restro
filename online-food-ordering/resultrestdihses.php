@@ -52,7 +52,8 @@ session_start();
 							}
 
 						?>
-							 
+                         <li class="nav-item"> <a class="nav-link active bg-warning px-1" type="button" href="../reservation.php">Book a table <span class="sr-only"></span></a> </li>
+							    <li class="nav-item"> <a class="nav-link active text-success" type="button" href="../reservation.php"><i class="fa fa-user" aria-hidden="true"></i> <?php echo $_SESSION['username']?><span class="sr-only"></span></a> </li>
                         </ul>
                     </div>
                 </div>
@@ -162,7 +163,7 @@ if(empty($title)){
 		
 			echo' <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
 			<div class="entry-logo">
-				<a class="img-fluid" href="dishes.php?res_id='.$row['rs_id'].'" > <img src="admin/Res_img/dishes/'.$row['img'].'" alt="Food logo" height="120px" width="120px"></a>
+				<a class="img-fluid" href="dishes.php?res_id='.$row['rs_id'].'" > <img src="admin/Res_img/dishes/'.$row['img'].'" alt="Food logo" height="120px" width="150px"></a>
 			</div>
 			<!-- end:Logo -->
 			<div class="entry-dscr">

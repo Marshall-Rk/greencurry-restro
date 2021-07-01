@@ -51,7 +51,8 @@ session_start();
 							}
 
 						?>
-							 
+                         <li class="nav-item"> <a class="nav-link active bg-warning px-1" type="button" href="../reservation.php">Book a table <span class="sr-only"></span></a> </li>
+							    <li class="nav-item"> <a class="nav-link active text-success" type="button" href="../reservation.php"><i class="fa fa-user" aria-hidden="true"></i> <?php echo $_SESSION['username']?><span class="sr-only"></span></a> </li>
                         </ul>
                     </div>
                 </div>

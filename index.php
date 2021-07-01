@@ -1,3 +1,30 @@
+<?php
+
+// php select option value from database
+
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$databaseName = "online_rest";
+
+// connect to mysql database
+
+$connect = mysqli_connect($hostname, $username, $password, $databaseName);
+
+// mysql select query
+$query = "SELECT * FROM `restaurant`";
+
+// for method 1
+
+$result1 = mysqli_query($connect, $query);
+
+// for method 2
+
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,6 +53,7 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+	<link href="online-food-ordering/css/style.css" rel="stylesheet"> </head>
   </head>
   <body>
   
@@ -73,7 +101,7 @@
 			  <li class="nav-item"><a href="online-food-ordering/admin/index.php" class="nav-link">ADMIN</a></li>
             <li class="nav-item"><a href="login.php" class="nav-link">MANAGER</a></li>
 		
-            <li class="nav-item cta"><a href="reservation.html" class="nav-link">Book a table</a></li>
+            <li class="nav-item cta"><a href="reservation.php" class="nav-link">Book a table</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -88,9 +116,44 @@
         <div class="container">
           <div class="row slider-text js-fullheight justify-content-center align-items-center" data-scrollax-parent="true">
 
-            <div class="col-md-12 col-sm-12 text-center ftco-animate">
-            	<span class="subheading">Greencurry</span>
+            <div class="col-md-12  col-sm-12 text-center ftco-animate">
+			
+			
+
+            	<span class="subheading">Greencurry<br></span>
+				<!-- <h2>
+				<form class="form" action="online-food-ordering/resultrestdihses.php" method="POST">
+      <input class="form-control form-control " type="text" placeholder="Enter any Dish Name... " name="title" valsize="40">
+          <input class="btn btn-primary btn-lg" type="submit"  name="save">
+          </form>
+		  </h2> -->
+		  <div id="subscription_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12" >
+        <div class="subscribe_now">
+        
+
+          <form class="subscribe_form" action="online-food-ordering/resultrestdihses.php" method="POST">
+            <div class="input-group">
+               <input type="text" class="form-control mt-2" name="title" placeholder="What are you Hungry for?" required>
+			   <input class="btn btn-primary btn-lg mt-2" type="submit"  name="save">
+               
+            </div>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+				
+				
+				
+					
               <h1 class="mb-4">Best Food & Restaurants</h1>
+			 
             </div>
 
           </div>
@@ -104,6 +167,29 @@
 
             <div class="col-md-12 col-sm-12 text-center ftco-animate">
             	<span class="subheading">Greencurry</span>
+
+<div id="subscription_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="subscribe_now">
+        
+       
+		<form class="subscribe_form" action="online-food-ordering/resultrestdihses.php" method="POST">
+            <div class="input-group">
+               <input type="text" class="form-control mt-2" name="title" placeholder="What are you Hungry for?" required>
+			   <input class="btn btn-primary btn-lg mt-2" type="submit"  name="save">
+               
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
               <h1 class="mb-4">Nutritious &amp; Tasty</h1>
             </div>
 
@@ -111,19 +197,43 @@
         </div>
       </div>
 
-      <div class="slider-item js-fullheight" style="background-image: url(images/bg_3.jpg);">
+      <!-- <div class="slider-item js-fullheight" style="background-image: url(images/bg_3.jpg);">
       	<div class="overlay"></div>
         <div class="container">
           <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 
             <div class="col-md-12 col-sm-12 text-center ftco-animate">
             	<span class="subheading">Greencurry</span>
+
+<div id="subscription_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="subscribe_now">
+        
+         
+		
+		<form class="subscribe_form" action="online-food-ordering/resultrestdihses.php" method="POST">
+            <div class="input-group">
+               <input type="text" class="form-control mt-2" name="title" placeholder="What are you Hungry for?" required>
+			   <input class="btn btn-primary btn-lg mt-2" type="submit"  name="save">
+               
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
               <h1 class="mb-4">Delicious Specialties</h1>
             </div>
 
           </div>
         </div>
-      </div>
+      </div> -->
     </section>
 
     <section class="ftco-section ftco-no-pt ftco-no-pb">
@@ -134,7 +244,16 @@
     					<div class="row">
     						<div class="col-md-3">
     							<div class="featured-menus ftco-animate">
-			              <div class="menu-img img" style="background-image: url(images/breakfast-1.jpg);"></div>
+			              <div class="menu-img img" style="background-image: url(online-food-ordering/admin/Res_img/dishes/60a0f9ebaf391.jpg);"></div>
+			              <div class="text text-center">
+		                  <h3>Uno Pizzeria & Grill</h3>
+				              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
+			              </div>
+			            </div>
+    						</div>
+    						<div class="col-md-3">
+    							<div class="featured-menus ftco-animate">
+			              <div class="menu-img img" style="background-image: url(online-food-ordering/admin/Res_img/dishes/5ad75799df865.jpg);"></div>
 			              <div class="text text-center">
 		                  <h3>Grilled Beef with potatoes</h3>
 				              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
@@ -143,7 +262,7 @@
     						</div>
     						<div class="col-md-3">
     							<div class="featured-menus ftco-animate">
-			              <div class="menu-img img" style="background-image: url(images/breakfast-2.jpg);"></div>
+			              <div class="menu-img img" style="background-image: url(online-food-ordering/admin/Res_img/dishes/60cdc5da2625b.jpg);"></div>
 			              <div class="text text-center">
 		                  <h3>Grilled Beef with potatoes</h3>
 				              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
@@ -152,16 +271,7 @@
     						</div>
     						<div class="col-md-3">
     							<div class="featured-menus ftco-animate">
-			              <div class="menu-img img" style="background-image: url(images/breakfast-3.jpg);"></div>
-			              <div class="text text-center">
-		                  <h3>Grilled Beef with potatoes</h3>
-				              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-			              </div>
-			            </div>
-    						</div>
-    						<div class="col-md-3">
-    							<div class="featured-menus ftco-animate">
-			              <div class="menu-img img" style="background-image: url(images/breakfast-4.jpg);"></div>
+			              <div class="menu-img img" style="background-image: url(online-food-ordering/admin/Res_img/dishes/60cdc665e0f62.jpg);"></div>
 			              <div class="text text-center">
 		                  <h3>Grilled Beef with potatoes</h3>
 				              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
@@ -191,7 +301,7 @@
 	          <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
 						<pc class="time">
 							<span>Mon - Fri <strong>8 AM - 11 PM</strong></span>
-							<span><a href="#">+ 1-978-123-4567</a></span>
+							<span><a class="text-dark" href="#">+ 1-978-123-4567</a></span>
 						</p>
 					</div>
 				</div>
@@ -295,7 +405,7 @@
     	<div class="container">
     		<div class="row no-gutters justify-content-center mb-5 pb-2">
           <div class="col-md-12 text-center heading-section ftco-animate">
-          	<span class="subheading">Specialties</span>
+          	<span class="subheading">Trending</span>
             <h2 class="mb-4">Our Menu</h2>
           </div>
         </div>
@@ -426,8 +536,8 @@
 			<div class="container">
 				<div class="row justify-content-center mb-5 pb-2">
           <div class="col-md-12 text-center heading-section ftco-animate">
-          	<span class="subheading">Chef</span>
-            <h2 class="mb-4">Master Chefs</h2>
+          	<span class="subheading">Top Chefs</span>
+            <h2 class="mb-4">Master Chefs From Mumbai</h2>
           </div>
 		  
 		          </div>	
@@ -565,24 +675,13 @@
 						  <div class="select-wrap one-third">
 							<div class="icon"><span class="ion-ios-arrow-down"></span></div>
 							<select name="restaurant" id="" required class="form-control">
-							<option value="Hari Burger">Hari Burger</option>
-							  <option value="The Great Kabab Factory">The Great Kabab Factory</option>
-							  <option value="Martini">Martini</option>
-							  <option value="Aarkay Vaishno Dhaba">Aarkay Vaishno Dhaba</option>
-							  <option value="hudson">hudson</option>
-							  <option value="kriyana store">kriyana store</option>
-							  <option value="Radhe-Krishna">Radhe-Krishna</option>
-							  <option value="Bombay-Burgers">Bombay-Burgers</option>
-							  <option value="Starboy Burgers & Shakes">Starboy Burgers & Shakes</option>
-							  <option value="Jimis Burger - Andheri">Jimis Burger - Andheri</option>
-							  <option value="Howra Burger">Howra Burger</option>
-							  <option value="Nino Burgers">Nino Burgers</option>
-							  <option value="Dreamland">Dreamland</option>
-							  <option value="Sai Leela">Sai Leela</option>
-							  <option value="Maratha Darbar">Maratha Darbar</option>
-							  <option value="Lakeside">Lakeside</option>
-							  <option value="Desi tadka">Desi tadka</option>
+							<?php while($row1 = mysqli_fetch_array($result1)):;?>
+
+<option value="<?php echo $row1[2];?>"><?php echo $row1[2];?></option>
+
+<?php endwhile;?>
 							</select>
+
 						  </div>
 						</div>
 					  </div>
@@ -756,6 +855,7 @@
           <div class="col-md-6 col-lg-3">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">GREENCURRY</h2>
+			  
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>

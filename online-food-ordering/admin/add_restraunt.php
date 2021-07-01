@@ -304,7 +304,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Phone </label>
-                                                    <input type="text" name="phone" class="form-control" placeholder="1-(555)-555-5555">
+                                                    <input type="text" name="phone" class="form-control" value="<?php echo rand(0000000000,9999999999); ?>" >
                                                    </div>
                                             </div>
                                             <!--/span-->

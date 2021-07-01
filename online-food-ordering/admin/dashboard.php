@@ -165,7 +165,7 @@ else
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-dark ">Dashboard - Welcome </h3> <?php echo $_SESSION['username']; ?></div>
+                    <h3 class="text-dark ">Dashboard - Welcome <span class="text-success"> <?php echo $_SESSION['username']; ?> </span></h3></div>
                <!-- <?php
 echo '<pre>';
 var_dump($_SESSION);
@@ -313,7 +313,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT SUM(price) AS value_sum FROM users_orders";
+$sql = "SELECT SUM(price*quantity) AS value_sum FROM users_orders";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -328,7 +328,7 @@ $conn->close();
                                     
                                     
                                     ?></h2>
-                                    <p class="m-b-0">Offline_payment</p>
+                                    <p class="m-b-0">Total Value Sold</p>
                                     
                                 </div>
                             </div>
@@ -370,7 +370,7 @@ $conn->close();
                                     
                                     
                                     ?></h2>
-                                    <p class="m-b-0">Online_Payment</p>
+                                    <p class="m-b-0">Recieved_Online</p>
                                 </div>
                             </div>
                         </div>

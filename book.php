@@ -37,7 +37,7 @@ if (!empty($fullname) || !empty($email) || !empty($phone1) || !empty($date) || !
       $stmt->bind_param("sssssis", $fullname, $email, $phone1, $date, $time, $person, $restaurant);
       $stmt->execute();
       echo "<h2><p> <font color=green><script>alert('Your Response has been Recorded');</script></h2></font> </p>";
-      echo "<script>window.location.href = 'reservation.html'</script>";  
+      echo "<script>window.location.href = 'reservation.php'</script>";  
      } else {
       echo "<h2>Someone already register using this email</h2>";
      }

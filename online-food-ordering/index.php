@@ -39,7 +39,7 @@ session_start(); //start temp session until logout/browser closed
                             <li class="nav-item"> <a class="nav-link active" href="../index.php">Home <span class="sr-only">(current)</span></a> </li>
                             <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span class="sr-only"></span></a> </li>
                         
-                            
+                            <!-- $_SESSION['username'] -->
                            
 							<?php
 						if(empty($_SESSION["user_id"])) // if user is not login
@@ -51,21 +51,27 @@ session_start(); //start temp session until logout/browser closed
 							}
 						else
 							{
-
 									//if user is login
                                     echo $user_id; 
+                                
 									echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">your orders</a> </li>';
                                     echo  '<li class="nav-item"><a href="cart.php" class="nav-link active">Cart</a> </li>';
 									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
+                                    
 							}
 
 						?>
-							     <li class="nav-item"> <a class="nav-link active" type="button" href="../reservation.html">Book a table <span class="sr-only"></span></a> </li>
+                               
+							     <li class="nav-item"> <a class="nav-link active bg-warning px-1" type="button" href="../reservation.php">Book a table <span class="sr-only"></span></a> </li>
+
+                                 <li class="nav-item"> <a class="nav-link active text-success" type="button" href="../reservation.php"><i class="fa fa-user" aria-hidden="true"></i> <?php echo $_SESSION['username']?><span class="sr-only"></span></a> </li>
+
                         </ul>
 						 
                     </div>
                 </div>
             </nav>
+            
             <!-- /.navbar -->
         </header>
         <!-- banner part starts -->
@@ -81,7 +87,7 @@ session_start(); //start temp session until logout/browser closed
 
 
 <form class="form-inline" action="resultrestdihses.php" method="POST">
-      <input class="form-control form-control-lg" type="text" placeholder="Enter any Dish Name..." name="title" valsize="40">
+      <input class="form-control form-control-lg" type="text" placeholder="Enter any Dish Name..." name="title" valsize="40" required="true">
           <input class="btn theme-btn btn-lg" type="submit"  name="save">
           </form>
 
@@ -119,11 +125,17 @@ session_start(); //start temp session until logout/browser closed
 	  
 	
         <!-- Popular block starts -->
-        <section class="popular">
+        <section class="popular ">
             <div class="container">
                 <div class="title text-xs-center m-b-30">
+              
                     <h2>Popular Dishes of the Month</h2>
-                    
+
+                  <!-- <?php
+echo '<pre>';
+var_dump($_SESSION);
+echo '</pre>';
+?>   -->
                     <p class="lead">The easiest way to your favourite food</p>
                 </div>
                 <div class="row">

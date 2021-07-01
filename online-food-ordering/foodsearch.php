@@ -56,7 +56,7 @@ include_once 'product-action.php'; //including controller
 							}
 
 						?>
-							 
+							  <li class="nav-item"> <a class="nav-link active text-success" type="button" href="../reservation.php"><i class="fa fa-user" aria-hidden="true"></i> <?php echo $_SESSION['username']?><span class="sr-only"></span></a> </li>
                         </ul>
                     </div>
                 </div>

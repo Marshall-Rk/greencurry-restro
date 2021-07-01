@@ -186,6 +186,7 @@ echo '</pre>';
                                                 <th>Username</th>		
                                                 <th>email</th>
                                                 <th>phone</th>
+                                                <th>address</th>
                                                 <th>Amount</th>
 												<th>Pay_ID</th>
                                                								
@@ -217,6 +218,7 @@ echo '</pre>';
 																					           <td>'.$rows['name'].'</td>
 																								<td>'.$rows['email'].'</td>
 																								<td>'.$rows['phone'].'</td>
+                                                                                                <td>'.$rows['address'].'</td>
 																								<td>₹'.$rows['amount'].'</td>
 																								<td>'.$rows['payment_id'].'</td> 
                                                                                                 ';

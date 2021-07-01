@@ -187,7 +187,7 @@ only screen and (max-width: 760px),
 							}
 
 						?>
-							 
+							   <li class="nav-item"> <a class="btn btn-success active text-white" type="button" ><?php echo $_SESSION['username']?> <span class="sr-only"></span></a> </li>
                         </ul>
                     </div>
                 </div>
@@ -199,7 +199,7 @@ only screen and (max-width: 760px),
            
             <!-- end:Top links -->
             <!-- start: Inner page hero -->
-            <div class="inner-page-hero bg-image" data-image-src="images/img/res.jpeg">
+            <div class="inner-page-hero bg-image" data-image-src="images/img/bg_3.jpg">
                 <div class="container"> </div>
                 <!-- end:Container -->
             </div>
@@ -217,7 +217,7 @@ only screen and (max-width: 760px),
                     <div class="row">
                         <div class="col-xs-12 col-sm-5 col-md-5 col-lg-3">
                           
-                          
+                         
                             <div class="widget clearfix">
                                 <!-- /widget heading -->
                                 <div class="widget-heading">
@@ -238,9 +238,11 @@ only screen and (max-width: 760px),
                         <div class="col-xs-12 col-sm-7 col-md-7 ">
                             <div class="bg-gray restaurant-entry">
                                 <div class="row">
-								
+                             
 							<table >
 						  <thead>
+                          <button type="button" class="btn btn-warning mb-1 ml-1">Your order Details</button>
+                        
 							<tr>
 							
 							  <th>Item</th>
@@ -323,8 +325,118 @@ only screen and (max-width: 760px),
 						
 						  </tbody>
 					</table>
+                    <button type="button" class="btn theme-btn btn-lg ml-1"  >
+                    <?php 
+                                    
+                                    $servername = "localhost";
+                                    $username = "root";
+                                    $password = "";
+                                    $dbname = "online_rest";
+                                    
+                                    // Create connection
+                                    $conn = new mysqli($servername, $username, $password, $dbname);
+                                    // Check connection
+                                    if ($conn->connect_error) {
+                                        die("Connection failed: " . $conn->connect_error);
+                                    } 
+                                    
+                                    $sql = "SELECT SUM(price*quantity) AS value_sum FROM users_orders where u_id='".$_SESSION['user_id']."'";
+                                    $result = $conn->query($sql);
+                                    
+                                    if ($result->num_rows > 0) {
+                                        // output data of each row
+                                        while($row = $result->fetch_assoc()) {
+                                            echo " Total order value: " . $row["value_sum"];
+                                        }
+                                    } else {
+                                        echo "0 results";
+                                    }
+                                    $conn->close();
+                           ?></button>
+                    <!-- <paymenttable> -->
+                        <br>    <br>
+                    <table >
+						  <thead>
+                          <button type="button" class="btn btn-warning mb-1 ml-1">Your Online payment Details</button>
+                
+							<tr>
+							
+							  <th>Email</th>
+							  <th>phone</th>
+                              <th>address</th>
+							  <th>name</th>
+							   <th>amount</th>
+							     <th>payment_status</th>
+								   <th>token</th>
+							  
+							</tr>
+						  </thead>
+						  <tbody>
+						  
+						  
+							<?php 
+						// displaying current session user login orders 
+						$query_res= mysqli_query($db,"select * from payment where email='".$_SESSION['email']."'");
+												if(!mysqli_num_rows($query_res) > 0 )
+														{
+															echo '<td colspan="6"><center>You have No orders Placed yet. </center></td>';
+														}
+													else
+														{			      
+										  
+										  while($row=mysqli_fetch_array($query_res))
+										  {
 						
-					
+							?>
+												<tr>	
+														 <td data-column="email"> <?php echo $row['email']; ?></td>
+														  <td data-column="phone"> <?php echo $row['phone']; ?></td>
+                                                          <td data-column="phone"> <?php echo $row['address']; ?></td>
+														  <td data-column="name"><?php echo $row['name']; ?></td>
+                                                          <td data-column="amount">₹ <?php echo $row['amount']; ?></td>
+														  <td class="text-success font-weight-bold" data-column="payment_status"> <?php echo $row['payment_status']; ?></td>
+														  <td data-column="token"> <?php echo $row['token']; ?></td>
+														 
+												</tr>
+												
+											
+														<?php }} ?>					
+							
+							
+										
+						
+						  </tbody>
+					</table>
+					<button type="button" class="btn theme-btn btn-lg"  >
+                   <?php 
+                                    
+                                    $servername = "localhost";
+                                    $username = "root";
+                                    $password = "";
+                                    $dbname = "online_rest";
+                                    
+                                    // Create connection
+                                    $conn = new mysqli($servername, $username, $password, $dbname);
+                                    // Check connection
+                                    if ($conn->connect_error) {
+                                        die("Connection failed: " . $conn->connect_error);
+                                    } 
+                                    
+                                    $sql = "SELECT SUM(amount) AS value_sum FROM payment where email='".$_SESSION['email']."'";
+                                    $result = $conn->query($sql);
+                                    
+                                    if ($result->num_rows > 0) {
+                                        // output data of each row
+                                        while($row = $result->fetch_assoc()) {
+                                            echo " Total Transaction: " . $row["value_sum"];
+                                        }
+                                    } else {
+                                        echo "0 results";
+                                    }
+                                    $conn->close();
+                                                                        
+                                                                        
+                           ?></button>
                                     
                                 </div>
                                 <!--end:row -->
@@ -340,6 +452,8 @@ only screen and (max-width: 760px),
                     </div>
                 </div>
             </section>
+
+           
             <section class="app-section">
                 <div class="app-wrap">
                     <div class="container">

@@ -48,7 +48,7 @@ session_start();
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
                         <li class="nav-item"> <a class="nav-link active" href="../index.php">Home <span class="sr-only"></span></a> </li>
-                        <li class="nav-item"> <a class="nav-link active" href="../reservation.html">Book-Table <span class="sr-only"></span></a> </li>
+                        <li class="nav-item"> <a class="nav-link active" href="../reservation.php">Book-Table <span class="sr-only"></span></a> </li>
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Order <span class="sr-only">(current)</span></a> </li>                           
                             <li class="nav-item"> <a class="nav-link active" href="admin">Admin-Login <span class="sr-only"></span></a> </li>
 							<?php
