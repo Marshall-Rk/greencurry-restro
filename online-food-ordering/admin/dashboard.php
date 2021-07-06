@@ -161,7 +161,7 @@ else
         </div>
         <!-- End Left Sidebar  -->
         <!-- Page wrapper  -->
-        <div class="page-wrapper" style="height:1200px;">
+        <div class="page-wrapper" >
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
@@ -291,6 +291,36 @@ $conn->close();
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle"> 
+                                    <span><i class="fa fa-credit-card f-s-40 color-info" aria-hidden="true"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2><?php
+   $connection_mysql = mysqli_connect("localhost","root","","online_rest");
+   
+   if (mysqli_connect_errno($connection_mysql)){
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+   }
+   $sql = "SELECT id FROM payment ";
+   
+   if ($result = mysqli_query($connection_mysql,$sql)){
+      $rowcount = mysqli_num_rows($result);
+      
+      printf("%d \n",$rowcount);
+      mysqli_free_result($result);
+   }
+   mysqli_close($connection_mysql);
+?></h2>
+                                    <p class="m-b-0">No. of Online Pay </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <div class="col-md-3">
                         <div class="card p-30">

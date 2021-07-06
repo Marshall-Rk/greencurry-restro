@@ -177,6 +177,25 @@ echo '</pre>';
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">All user Orders</h4>
+                                <button type="button"  class="btn btn-primary  ">  
+                       <?php
+   $connection_mysql = mysqli_connect("localhost","root","","online_rest");
+   
+   if (mysqli_connect_errno($connection_mysql)){
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+   }
+   $sql = "SELECT id FROM payment ";
+   
+   if ($result = mysqli_query($connection_mysql,$sql)){
+      $rowcount = mysqli_num_rows($result);
+      
+      printf("No. of Pay's - %d \n",$rowcount);
+      mysqli_free_result($result);
+   }
+   mysqli_close($connection_mysql);
+?>
+
+</button>
                              
                                 <div class="table-responsive m-t-40">
                                     <table id="myTable" class="table table-bordered table-striped">

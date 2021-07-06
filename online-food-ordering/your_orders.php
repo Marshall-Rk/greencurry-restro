@@ -346,7 +346,7 @@ only screen and (max-width: 760px),
                                     if ($result->num_rows > 0) {
                                         // output data of each row
                                         while($row = $result->fetch_assoc()) {
-                                            echo " Total order value: " . $row["value_sum"];
+                                            echo " Total order value: ₹" . $row["value_sum"];
                                         }
                                     } else {
                                         echo "0 results";
@@ -428,7 +428,7 @@ only screen and (max-width: 760px),
                                     if ($result->num_rows > 0) {
                                         // output data of each row
                                         while($row = $result->fetch_assoc()) {
-                                            echo " Total Transaction: " . $row["value_sum"];
+                                            echo " Total Transaction: ₹" . $row["value_sum"];
                                         }
                                     } else {
                                         echo "0 results";

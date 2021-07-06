@@ -176,6 +176,25 @@ session_start();
 						     <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">All Menu data</h4>
+                                <button type="button"  class="btn btn-primary  ">  
+                       <?php
+   $connection_mysql = mysqli_connect("localhost","root","","online_rest");
+   
+   if (mysqli_connect_errno($connection_mysql)){
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+   }
+   $sql = "SELECT d_id FROM dishes ";
+   
+   if ($result = mysqli_query($connection_mysql,$sql)){
+      $rowcount = mysqli_num_rows($result);
+      
+      printf("Total ID's - %d \n",$rowcount);
+      mysqli_free_result($result);
+   }
+   mysqli_close($connection_mysql);
+?>
+
+</button>
                                 <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
 								
                                 <div class="table-responsive m-t-40">
@@ -229,7 +248,7 @@ session_start();
 																								
 																								
 																								<td><div class="col-md-3 col-lg-8 m-b-10">
-																								<center><img src="Res_img/dishes/'.$rows['img'].'" class="img-responsive  radius" style="max-height:100px;max-width:150px;" /></center>
+																								<center><img src="Res_img/dishes/'.$rows['img'].'" class="img-responsive  radius" style="max-height:200px;max-width:250px;" /></center>
 																								</div></td>
 																								
 																							
