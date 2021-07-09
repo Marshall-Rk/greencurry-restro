@@ -113,11 +113,8 @@ else
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Home</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="dashboard.php">Dashboard</a></li>
-                                
-                            </ul>
+                        <li> <a class="" href="dashboard.php" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
+                           
                         </li>
                         <li class="nav-label">Log</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false">  <span><i class="fa fa-user f-s-20 "></i></span><span class="hide-menu">Users</span></a>
@@ -147,12 +144,42 @@ else
 						 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hide-menu">Orders</span></a>
                             <ul aria-expanded="false" class="collapse">
 								<li><a href="all_orders.php">All Orders</a></li>
-                                <li><a href="all_orders_online.php">Online-Payment</a></li>
 								  
                             </ul>
                         </li>
-                        
-                         
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-usd" aria-hidden="true"></i><span class="hide-menu">Online-Payment</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="all_orders_online.php">Payment Details</a></li>
+								  
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-ticket" aria-hidden="true"></i><span class="hide-menu">Table-Bookings</span></a>
+                            <ul aria-expanded="false" class="collapse">
+								<li><a href="alltablebook.php">All Bookings</a></li>
+								  
+                            </ul>
+                        </li>
+
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-newspaper-o" aria-hidden="true"></i><span class="hide-menu">Newsletter-Subscribers</span></a>
+                            <ul aria-expanded="false" class="collapse">
+								<li><a href="newletter.php">All Subscribers</a></li>
+								  
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-address-book" aria-hidden="true"></i><span class="hide-menu">Contact/Feedback</span></a>
+                            <ul aria-expanded="false" class="collapse">
+								<li><a href="feedback.php">All Feedback</a></li>
+								  
+                            </ul>
+                        </li>
+
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope" aria-hidden="true"></i><span class="hide-menu">Email-Marketing</span></a>
+                            <ul aria-expanded="false" class="collapse">
+								<li><a href="feedback.php">All Feedback</a></li>
+								  
+                            </ul>
+                        </li>
+
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->

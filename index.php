@@ -915,8 +915,50 @@ $result1 = mysqli_query($connect, $query);
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12 text-center">
-
+		<div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Search</h2>
+              <ul class="list-unstyled open-hours">
+                <li class="d-flex"><span>Sign-Up</span></li>
+                <li class="d-flex"><span>Login</span></li>
+                <li class="d-flex"><span>Book-Table</span></li>
+              </ul>
+            </div>
+          </div>
+		  <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Order</h2>
+              <ul class="list-unstyled open-hours">
+               <li class="d-flex"><span>Search Food</span></li>
+                <li class="d-flex"><span>Search Restaurant</span></li>
+                <li class="d-flex"><span>Order</span></li>
+                <li class="d-flex"><span>Menu</span></li>
+              </ul>
+            </div>
+          </div>
+		<div class="col-xs-12 col-sm-3 payment-options color-gray">
+                                    <h5>Payment Options</h5>
+                                    <ul>
+                                        <li>
+                                            <a href="#"> <img src="online-food-ordering/images/paypal.png" alt="Paypal"> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> <img src="online-food-ordering/images/mastercard.png" alt="Mastercard"> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> <img src="online-food-ordering/images/maestro.png" alt="Maestro"> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> <img src="online-food-ordering/images/stripe.png" alt="Stripe"> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> <img src="online-food-ordering/images/bitcoin.png" alt="Bitcoin"> </a>
+                                        </li>
+                                    </ul>
+                                </div>
+								
+          <div class="col-md-12 text-center mt-1">
+		  
             <p>
   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Website is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://bit.ly/official-nextgenpixel" target="_blank">Nextgenpixel</a>
   </p>
