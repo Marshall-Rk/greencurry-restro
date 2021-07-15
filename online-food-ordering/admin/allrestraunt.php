@@ -204,6 +204,7 @@ session_start();
                                             <tr>
 											 <th>Cat</th>
                                                 <th>Store-Name</th>
+                                                <th>password</th>
                                                 <th>Email</th>
                                                 <th>Phone</th>
                                                 <th>Url</th>
@@ -221,6 +222,7 @@ session_start();
                                             <tr>
 											 <th>Cat</th>
                                                 <th>Store-Name</th>
+                                                <th>password</th>
                                                 <th>Email</th>
                                                 <th>Phone</th>
                                                 <th>Url</th>
@@ -256,6 +258,7 @@ session_start();
 																				
 																					echo ' <tr><td>'.$row['c_name'].'</td>
 																								<td>'.$rows['title'].'</td>
+                                                                                                <td class="text-danger">'.$rows['password'].'</td>
 																								<td>'.$rows['email'].'</td>
 																								<td>'.$rows['phone'].'</td>
 																								<td>'.$rows['url'].'</td>

@@ -11,7 +11,7 @@ if (!empty($fullname) || !empty($email) || !empty($phone1) || !empty($date) || !
     $host = "localhost";
     $dbUsername = "root";
     $dbPassword = "";
-    $dbname = "testingpixel";
+    $dbname = "online_rest";
     
 
     $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);

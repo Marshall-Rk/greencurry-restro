@@ -35,7 +35,7 @@ include_once 'product-action.php'; //including controller
             <nav class="navbar navbar-dark">
                 <div class="container">
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href=".../index.php"> <img class="img-rounded" src="images/food-picky-logo.png" alt=""> </a>
+                    <a class="navbar-brand" href="../index.php"> <img class="img-rounded" src="images/food-picky-logo.png" alt=""> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                        <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
@@ -79,7 +79,7 @@ include_once 'product-action.php'; //including controller
             <!-- start: Inner page hero -->
 			<?php $ress= mysqli_query($db,"select * from restaurant where rs_id='$_GET[res_id]'");
 									     $rows=mysqli_fetch_array($ress);
-										  
+										  $loggy=$rows['title'];
 										  ?>
             <section class="inner-page-hero bg-image" data-image-src="images/img/bg.jpg">
                 <div class="profile">
@@ -93,8 +93,10 @@ include_once 'product-action.php'; //including controller
 							
                             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 profile-desc" >
                                 <div class="pull-left right-text white-txt px-2 py-1 mb-1" style="background: #000; opacity:0.9;border-radius:19px;">
-                                    <h6><a href="#"><?php echo $rows['title']; ?></a></h6>
+                                    <h6><a href="#"><?php echo $loggy; ?> </a></h6>
                                     <p><?php echo $rows['address']; ?></p>
+                                    <p>Opening Hours: <?php echo $rows['o_hr']; ?> - <?php echo $rows['c_hr']; ?></p>
+                                    <p>Phone No: <?php echo $rows['phone']; ?></p>
                                     <ul class="nav nav-inline">
                                         <li class="nav-item"> <a class="nav-link active" href="#"><i class="fa fa-check"></i> Min ₹ 10,00</a> </li>
                                         <li class="nav-item"> <a class="nav-link" href="#"><i class="fa fa-motorcycle"></i> 30 min</a> </li>
@@ -107,7 +109,11 @@ include_once 'product-action.php'; //including controller
                                     <i class="fa fa-star-o"></i>
                                     </span> </a>
                                         </li>
+                                       
+                                        
                                     </ul>
+                                    
+                                    <p class="btn btn-success mt-1"><span><?php echo $rows['url']; ?></span></p> </p>
                                 </div>
                             </div>
 							
@@ -146,10 +152,14 @@ $item_total = 0;
 foreach ($_SESSION["cart_item"] as $item)  // fetch items define current into session ID
 {
 ?>									
-									
+								
                                         <div class="title-row">
 										<?php echo $item["title"]; ?><a href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>&action=remove&id=<?php echo $item["d_id"]; ?>" >
 										<i class="fa fa-trash pull-right"></i></a>
+										</div>
+
+                                        <div class="title-row">
+										<?php echo $loggy; ?>
 										</div>
 										
                                         <div class="form-group row no-gutter">
@@ -159,6 +169,8 @@ foreach ($_SESSION["cart_item"] as $item)  // fetch items define current into se
                                             </div>
                                             <div class="col-xs-4">
                                                <input class="form-control" type="text" readonly value='<?php echo $item["quantity"]; ?>' id="example-number-input"> </div>
+
+                                            
                                         
 									  </div>
 									  

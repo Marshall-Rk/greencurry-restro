@@ -1,8 +1,6 @@
 
 
 
-
-
 <?php
 $name = $_POST['name'];
 $email = $_POST['email'];
@@ -15,7 +13,7 @@ if (!empty($name) || !empty($email) || !empty($subject) || !empty($message) ) {
     $host = "localhost";
     $dbUsername = "root";
     $dbPassword = "";
-    $dbname = "testingpixel";
+    $dbname = "online_rest";
     
 
     $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);

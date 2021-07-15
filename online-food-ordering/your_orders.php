@@ -26,6 +26,7 @@ else
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
+    
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
 <style type="text/css" rel="stylesheet">
@@ -215,37 +216,38 @@ only screen and (max-width: 760px),
             <section class="restaurants-page">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-3">
+                    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-3">
                           
                          
-                            <div class="widget clearfix">
-                                <!-- /widget heading -->
-                                <div class="widget-heading">
-                                    <h3 class="widget-title text-dark">
-                                Search
-                              </h3>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="widget-body">
-                                <a class="btn theme-btn mb-1" href="restaurants.php">Search-Restaurants</a><br>
-                                <a class="btn theme-btn mb-1" href="restaurants.php">Search-Food</a><br>
-                                <a class="btn theme-btn mb-1" href="index.php">Home</a><br>
+                          <div class="widget clearfix">
+                              <!-- /widget heading -->
+                              <div class="widget-heading">
+                                  <h3 class="widget-title text-dark">
+                              Search
+                            </h3>
+                                  <div class="clearfix"></div>
+                              </div>
+                              <div class="widget-body">
+                              <a class="btn theme-btn mb-1" href="restaurants.php">Search-Restaurants</a><br>
+                              <a class="btn theme-btn mb-1" href="restaurants.php">Search-Food</a><br>
+                              <a class="btn theme-btn mb-1" href="index.php">Home</a><br>
 
-                                </div>
-                            </div>
-                            <!-- end:Widget -->
-                        </div>
+                              </div>
+                          </div>
+                          <!-- end:Widget -->
+                      </div>
                         <div class="col-xs-12 col-sm-7 col-md-7 ">
-                            <div class="bg-gray restaurant-entry">
+                           
                                 <div class="row">
                              
-							<table >
+							<table  class="table table-fluid  ">
 						  <thead>
                           <button type="button" class="btn btn-warning mb-1 ml-1">Your order Details</button>
                         
 							<tr>
-							
-							  <th>Item</th>
+						
+							  <th>Restaurant-ID</th>
+                              <th>Item</th>
 							  <th>Quantity</th>
 							  <th>price</th>
 							   <th>status</th>
@@ -259,7 +261,7 @@ only screen and (max-width: 760px),
 						  
 							<?php 
 						// displaying current session user login orders 
-						$query_res= mysqli_query($db,"select * from users_orders where u_id='".$_SESSION['user_id']."'");
+						$query_res= mysqli_query($db,"SELECT dishes.*, users_orders.* FROM dishes INNER JOIN users_orders ON dishes.d_id=users_orders.d_id  where u_id='".$_SESSION['user_id']."'");
 												if(!mysqli_num_rows($query_res) > 0 )
 														{
 															echo '<td colspan="6"><center>You have No orders Placed yet. </center></td>';
@@ -272,6 +274,8 @@ only screen and (max-width: 760px),
 						
 							?>
 												<tr>	
+                                               
+                                                     <td data-column="Item"> <?php echo $row['rs_id']; ?></td>
 														 <td data-column="Item"> <?php echo $row['title']; ?></td>
 														  <td data-column="Quantity"> <?php echo $row['quantity']; ?></td>
 														  <td data-column="price">₹<?php echo $row['price']; ?></td>
@@ -355,7 +359,7 @@ only screen and (max-width: 760px),
                            ?></button>
                     <!-- <paymenttable> -->
                         <br>    <br>
-                    <table >
+                    <table class="table table-fluid " >
 						  <thead>
                           <button type="button" class="btn btn-warning mb-1 ml-1">Your Online payment Details</button>
                 
@@ -366,6 +370,7 @@ only screen and (max-width: 760px),
                               <th>address</th>
 							  <th>name</th>
 							   <th>amount</th>
+                               <th>Date</th>
 							     <th>payment_status</th>
 								   <th>token</th>
 							  
@@ -394,6 +399,7 @@ only screen and (max-width: 760px),
                                                           <td data-column="phone"> <?php echo $row['address']; ?></td>
 														  <td data-column="name"><?php echo $row['name']; ?></td>
                                                           <td data-column="amount">₹ <?php echo $row['amount']; ?></td>
+                                                          <td data-column="amount"><?php echo $row['added_on']; ?></td>
 														  <td class="text-success font-weight-bold" data-column="payment_status"> <?php echo $row['payment_status']; ?></td>
 														  <td data-column="token"> <?php echo $row['token']; ?></td>
 														 

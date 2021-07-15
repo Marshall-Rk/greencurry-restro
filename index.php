@@ -99,7 +99,7 @@ $result1 = mysqli_query($connect, $query);
 			
 			  <li class="nav-item"><a href="online-food-ordering" class="nav-link">Order</a></li>
 			  <li class="nav-item"><a href="online-food-ordering/admin/index.php" class="nav-link">ADMIN</a></li>
-            <li class="nav-item"><a href="login.php" class="nav-link">MANAGER</a></li>
+            <li class="nav-item"><a href="restro-dashboard.php" class="nav-link">MANAGER</a></li>
 		
             <li class="nav-item cta"><a href="reservation.php" class="nav-link">Book a table</a></li>
 	        </ul>

@@ -55,7 +55,7 @@ session_start(); //start temp session until logout/browser closed
                                     echo $user_id; 
                                 
 									echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">your orders</a> </li>';
-                                    echo  '<li class="nav-item"><a href="cart.php" class="nav-link active">Cart</a> </li>';
+                                    echo  '<li class="nav-item"><a href="cart.php" class="nav-link active"><i class="fa fa-shopping-cart"></i> Cart</a> </li>';
 									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
                                     
 							}

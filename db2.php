@@ -1,3 +1,3 @@
 <?php
-$con=mysqli_connect('localhost','root','','testingpixel');
+$con=mysqli_connect('localhost','root','','online_rest');
 ?>

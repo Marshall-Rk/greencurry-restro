@@ -20,11 +20,11 @@ else{
 													if($_POST['submit'])
 													{
 						
-													$SQL="insert into users_orders(u_id,title,quantity,price) values('".$_SESSION["user_id"]."','".$item["title"]."','".$item["quantity"]."','".$item["price"]."')";
+													$SQL="insert into users_orders(u_id,username,phone,address,d_id,title,quantity,price) values('".$_SESSION["user_id"]."','".$_SESSION["username"]."','".$_SESSION["phone"]."','".$_SESSION["address"]."','".$item["d_id"]."','".$item["title"]."','".$item["quantity"]."','".$item["price"]."')";
 						
 														mysqli_query($db,$SQL);
 														
-														$success = "<h2><font color=green>Thankyou! Your Order Placed successfully!<font color=red> Pay online by clicking Below</h2>";
+														$success = "<h2><font color=green>Thankyou! Your Order Placed successfully!<span color=red> Pay online by clicking Below</span></h2>";
 
 														
 														
@@ -128,14 +128,22 @@ echo '</pre>';
                                             <h4>Cart Summary</h4> </div>
                                         <div class="cart-totals-fields">
 										
-                                            <table class="table">
+                                            <table class="table table-bordered ">
 											<tbody>
                                           
 												 
-											   
+                                         
                                                     <tr>
                                                         <td>Cart Subtotal</td>
                                                         <td> <?php echo "₹".$item_total; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Food-Item</td>
+                                                        <td><?php echo $item["title"]; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Dish-ID</td>
+                                                        <td><?php echo $item["d_id"]; ?></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Shipping &amp; Handling</td>

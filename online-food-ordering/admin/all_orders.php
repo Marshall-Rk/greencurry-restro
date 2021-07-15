@@ -194,8 +194,11 @@ session_start();
                                 <div class="table-responsive m-t-40">
                                     <table id="myTable" class="table table-bordered table-striped">
                                         <thead>
-                                            <tr>
-                                                <th>Username</th>		
+                                            <tr>   
+                                                 <th>Restro-ID</th>	
+                                                <th>Username</th>	
+                                            
+                                                <th>phone</th>	
                                                 <th>Title</th>
                                                 <th>Quantity</th>
                                                 <th>price</th>
@@ -210,7 +213,7 @@ session_start();
                                            
 											
 											<?php
-												$sql="SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id ";
+												$sql="SELECT users.*, users_orders.* , dishes.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id INNER JOIN dishes ON users_orders.d_id=dishes.d_id ";
 												$query=mysqli_query($db,$sql);
 												
 													if(!mysqli_num_rows($query) > 0 )
@@ -225,7 +228,9 @@ session_start();
 																				?>
 																				<?php
 																					echo ' <tr>
+                                                                                    <td>'.$rows['rs_id'].'</td>
 																					           <td>'.$rows['username'].'</td>
+                                                                                               <td>'.$rows['phone'].'</td>
 																								<td>'.$rows['title'].'</td>
 																								<td>'.$rows['quantity'].'</td>
 																								<td>₹'.$rows['price'].'</td>

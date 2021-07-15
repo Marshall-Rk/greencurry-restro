@@ -63,6 +63,7 @@ include_once 'product-action.php'; //including controller
             </nav>
             <!-- /.navbar -->
         </header>
+        
         <div class="page-wrapper">
             <!-- top Links -->
             
