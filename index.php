@@ -93,7 +93,7 @@ $result1 = mysqli_query($connect, $query);
 	        	<li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
 	        	<li class="nav-item"><a href="online-food-ordering/restaurants.php" class="nav-link">Restaurants</a></li>
 	        	<li class="nav-item"><a href="online-food-ordering/menu.php" class="nav-link">Menu</a></li>
-	        	<li class="nav-item"><a href="blog.html" class="nav-link">Stories</a></li>
+	        	<li class="nav-item"><a href="online-food-ordering/login.php" class="nav-link">Customer</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 			
 			
@@ -410,7 +410,9 @@ $result1 = mysqli_query($connect, $query);
           </div>
         </div>
         <div class="row no-gutters d-flex align-items-stretch">
+
         	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+				
         		<div class="menus d-sm-flex ftco-animate align-items-stretch">
               <div class="menu-img img" style="background-image: url(online-food-ordering/restaurantimage/fooditems/b1.jpg);"></div>
               <div class="text d-flex align-items-center">
@@ -431,6 +433,7 @@ $result1 = mysqli_query($connect, $query);
               </div>
             </div>
         	</div>
+			
         	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
         		<div class="menus d-sm-flex ftco-animate align-items-stretch">
               <div class="menu-img img" style="background-image: url(online-food-ordering/restaurantimage/fooditems/b3.jpg);"></div>
@@ -848,125 +851,11 @@ $result1 = mysqli_query($connect, $query);
         </div>
 			</div>
 		</section>
+	<?php
 		
-    <footer class="ftco-footer ftco-bg-dark ftco-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-6 col-lg-3">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">GREENCURRY</h2>
-			  
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Open Hours</h2>
-              <ul class="list-unstyled open-hours">
-                <li class="d-flex"><span>Monday</span><span>9:00 - 24:00</span></li>
-                <li class="d-flex"><span>Tuesday</span><span>9:00 - 24:00</span></li>
-                <li class="d-flex"><span>Wednesday</span><span>9:00 - 24:00</span></li>
-                <li class="d-flex"><span>Thursday</span><span>9:00 - 24:00</span></li>
-                <li class="d-flex"><span>Friday</span><span>9:00 - 02:00</span></li>
-                <li class="d-flex"><span>Saturday</span><span>9:00 - 02:00</span></li>
-                <li class="d-flex"><span>Sunday</span><span> 9:00 - 02:00</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Instagram</h2>
-              <div class="thumb d-sm-flex">
-	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta-1.jpg);">
-	            	</a>
-	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta-2.jpg);">
-	            	</a>
-	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta-3.jpg);">
-	            	</a>
-	            </div>
-	            <div class="thumb d-flex">
-	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta-4.jpg);">
-	            	</a>
-	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta-5.jpg);">
-	            	</a>
-	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta-6.jpg);">
-	            	</a>
-	            </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Newsletter</h2>
-            	<p>Far far away, behind the word mountains, far from the countries.</p>
+    include("footer.php");
 
-              <form action="newsletter.php" method="post" class="subscribe-form">
-                <div class="form-group">
-                  <input type="text" class="form-control mb-2 text-center" name="email" placeholder="Enter email address">
-                  <input type="submit" value="Subscribe"  name="submit" class="form-control submit px-3">
-                </div>
-              </form>
-
-            </div>
-          </div>
-        </div>
-        <div class="row">
-		<div class="col-md-6 col-lg-3">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Search</h2>
-              <ul class="list-unstyled open-hours">
-                <li class="d-flex"><span>Sign-Up</span></li>
-                <li class="d-flex"><span>Login</span></li>
-                <li class="d-flex"><span>Book-Table</span></li>
-              </ul>
-            </div>
-          </div>
-		  <div class="col-md-6 col-lg-3">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Order</h2>
-              <ul class="list-unstyled open-hours">
-               <li class="d-flex"><span>Search Food</span></li>
-                <li class="d-flex"><span>Search Restaurant</span></li>
-                <li class="d-flex"><span>Order</span></li>
-                <li class="d-flex"><span>Menu</span></li>
-              </ul>
-            </div>
-          </div>
-		<div class="col-xs-12 col-sm-3 payment-options color-gray">
-                                    <h5>Payment Options</h5>
-                                    <ul>
-                                        <li>
-                                            <a href="#"> <img src="online-food-ordering/images/paypal.png" alt="Paypal"> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="online-food-ordering/images/mastercard.png" alt="Mastercard"> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="online-food-ordering/images/maestro.png" alt="Maestro"> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="online-food-ordering/images/stripe.png" alt="Stripe"> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="online-food-ordering/images/bitcoin.png" alt="Bitcoin"> </a>
-                                        </li>
-                                    </ul>
-                                </div>
-								
-          <div class="col-md-12 text-center mt-1">
-		  
-            <p>
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Website is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://bit.ly/official-nextgenpixel" target="_blank">Nextgenpixel</a>
-  </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-  
+	?>
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>

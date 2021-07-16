@@ -199,8 +199,6 @@ session_start();
 														<!--end:Restaurant wrap -->
 													</div>';
 										  }
-						
-						
 						?>
 						
 							

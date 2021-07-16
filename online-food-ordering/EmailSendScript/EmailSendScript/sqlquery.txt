@@ -1,0 +1,65 @@
+UPDATE email_list SET send = '0' WHERE send = '1'
+
+INSERT INTO `email_list` (`id`, `email`, `send`) VALUES (NULL, 'amitkumarjaiswal5294879@gmail.com', '0');
+
+shahabtemkar@gmail.com
+Arshadbamne@gmail.com
+
+
+
+msg1:
+Greetings of the day, I hope you are doing well. <br/>
+		Nextgenpixel is your one-stop solution if you want to grow online because we offer the three core services that will essentially kickstart your business and take it to the next level.<br/>
+		Although the internet has become a major part of our life, doing it all by ourselves is still a bit of a hassle; especially the technical bit.<br/>
+		Here is when Nextgenpixel comes to your aid.<br/>
+		We make a variety of websites that are fluid, tailor-made as per your needs, and also fit the bill.Kickstart your business with the help of a custom-made website that will help you enhance your reach.<br/>
+		✓ We Deliver Comprehensive Graphic Design Services.<br/>
+		✓ We Deliver Comprehensive Website Design Services.<br/>
+		✓ We Deliver Comprehensive Web/App UI Design Services.<br/>
+		✓ We Deliver Comprehensive Social Media Marketing Services.<br/>
+		
+		Other Services: <br/>
+		•Social Media Posts <br/>
+		•Email-Signature <br/>
+		•Brochure <br/>
+		•Letterhead <br/>
+		•PowerPoint Design etc <br/>
+		
+		You can take a glance at my work for your reference by clicking the link below:<br/>
+		https://linktr.ee/official_nextgenpixel<br/>
+------------------------------------------------------------------------------------------------------------------------------------------------
+$html="WEBSITE FOR SALE!!!<br/>
+		Is your Cafe or Restaurant struggling for customers everyday? Do you feel that no one knows about your business?<br/>
+		Gain more exposure than ever before by letting your Website speak for you. Flaunt your delicious food and your beautiful ambience to those who don't know you yet.<br/>
+		So, what are you waiting for? Above website is on SALE!! Grab it and let your business sales skyrocket.
+		This enticing website is available for purchase.<br/>
+		Get your own website for all the small or medium scale business that your restaurant or cafe offers.
+		Get in touch now.<br/>
+		Features of this website: <br/>
+		.Admin login to access all data. <br/>
+		.Contact and Table Registration form. <br/>
+		.Easy navigation and Mobile Friendly. <br/>
+		.Trendy, intuitive design and user experience. <br/>
+		.Optimized website for a smoother cross platform experience. <br/>
+		Website Link: https://greencurry.herokuapp.com<br/>
+		Thanks and regards<br/>
+		-Rajkamal Gautam <br/>
+		(Nextgenpixel)<br/>
+		You can take a glance at my work and other social platform for your reference by clicking the link below:
+		https://linktr.ee/official_nextgenpixel<br/> <img src='TRACKLINK/track.php?id=$id' width='1px' height='1px'/>";
+--------------------------------------------------------------
+
+
+mysql> UPDATE FirstTable tbl1
+   -> INNER JOIN SecondTable tbl2 ON tbl1.UserId = tbl2.UserId
+   -> SET tbl1.Age = tbl2.UserAge;
+https://stackoverflow.com/questions/4487426/upload-a-file-to-the-file-structure-form-data-to-the-database
+
+
+call 2tables
+("select email_list.*, pixelemail.* FROM email_list, pixelemail");
+this works
+select * FROM email_list,pixelemail where email_list.CreatedByWhom = pixelemail.id;
+
+ORDER BY `id` DESC
+SELECT email_list.id, email_list.email, email_list.createdByWhom, pixelemail.id, pixelemail.username FROM email_list LEFT JOIN pixelemail ON (email_list.createdByWhom = pixelemail.id)

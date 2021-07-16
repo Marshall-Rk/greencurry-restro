@@ -175,7 +175,7 @@ else
 
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope" aria-hidden="true"></i><span class="hide-menu">Email-Marketing</span></a>
                             <ul aria-expanded="false" class="collapse">
-								<li><a href="feedback.php">All Feedback</a></li>
+								<li><a href="../EmailSendScript">Send -Notification</a></li>
 								  
                             </ul>
                         </li>
